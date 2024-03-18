@@ -1,0 +1,12 @@
+  "요리명" name
+  "요리사진" image
+  "주재료" main_ingredients
+  "부재료" additional_ingredients
+  "요리 방법" steps
+  "분량" serving_size
+  "칼로리"calories
+  "소요시간" prep_time
+  "팁" tips
+  "출처"source
+  "별점"star
+  "찜"interest
