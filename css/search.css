@@ -1,0 +1,49 @@
+header {
+  height: 150px;
+  background-color: rgb(219, 255, 183);
+  text-align: center;
+}
+footer {
+  height: 150px;
+  background-color: rgb(219, 255, 183);
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+.tab {
+  height: 50px;
+  background-color: antiquewhite;
+}
+section {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+img {
+  width: 100%;
+}
+.recipe {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.recipe li {
+  width: 200px;
+  height: 200px;
+  margin: 40px 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .recipe {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .recipe li {
+    width: 40vw;
+    height: 40vw;
+  }
+}
