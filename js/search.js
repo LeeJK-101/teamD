@@ -1,6 +1,5 @@
 const cooking = [
   {
-    id: 1,
     name: '레시피1',
     time: '10분',
     image: '../img/sample01.png',
@@ -8,7 +7,6 @@ const cooking = [
     class: '계란,치즈',
   },
   {
-    id: 2,
     name: '레시피2',
     time: '10분',
     image: '../img/sample02.png',
@@ -16,7 +14,6 @@ const cooking = [
     class: '계란,두부',
   },
   {
-    id: 3,
     name: '레시피3',
     time: '10분',
     image: '../img/sample03.png',
@@ -24,7 +21,6 @@ const cooking = [
     class: '계란',
   },
   {
-    id: 4,
     name: '레시피4',
     time: '10분',
     image: '../img/sample04.png',
@@ -32,7 +28,6 @@ const cooking = [
     class: '두부',
   },
   {
-    id: 5,
     name: '레시피5',
     time: '10분',
     image: '../img/sample05.png',
@@ -40,7 +35,6 @@ const cooking = [
     class: '계란',
   },
   {
-    id: 6,
     name: '레시피6',
     time: '10분',
     image: '../img/sample06.png',
@@ -48,7 +42,6 @@ const cooking = [
     class: '치즈',
   },
   {
-    id: 7,
     name: '레시피7',
     time: '10분',
     image: '../img/sample07.png',
@@ -56,7 +49,6 @@ const cooking = [
     class: '당근',
   },
   {
-    id: 8,
     name: '레시피8',
     time: '10분',
     image: '../img/sample08.png',
@@ -64,7 +56,6 @@ const cooking = [
     class: '계란',
   },
   {
-    id: 9,
     name: '레시피9',
     time: '10분',
     image: '../img/sample09.png',
@@ -72,7 +63,6 @@ const cooking = [
     class: '당근',
   },
   {
-    id: 10,
     name: '레시피10',
     time: '10분',
     image: '../img/sample10.png',
@@ -80,15 +70,13 @@ const cooking = [
     class: '당근',
   },
   {
-    id: 11,
     name: '레시피11',
     time: '10분',
     image: '../img/sample11.png',
     description: '',
-    class: '계란',
+    class: '감자',
   },
   {
-    id: 12,
     name: '레시피12',
     time: '10분',
     image: '../img/sample12.png',
@@ -96,7 +84,6 @@ const cooking = [
     class: '계란',
   },
   {
-    id: 13,
     name: '레시피13',
     time: '10분',
     image: '../img/sample13.png',
@@ -104,7 +91,6 @@ const cooking = [
     class: '계란',
   },
   {
-    id: 14,
     name: '레시피14',
     time: '10분',
     image: '../img/sample14.png',
@@ -112,7 +98,6 @@ const cooking = [
     class: '계란',
   },
   {
-    id: 15,
     name: '레시피15',
     time: '10분',
     image: '../img/sample15.png',
@@ -120,7 +105,6 @@ const cooking = [
     class: '계란',
   },
   {
-    id: 16,
     name: '레시피16',
     time: '10분',
     image: '../img/sample16.png',
@@ -147,12 +131,26 @@ function searchRecipe(keyword) {
   const filteredRecipe = cooking.filter((cook) => {
     return cook.class.includes(keyword);
   });
-
-  displayList(filteredRecipe);
+  if (keyword == '계란') {
+    displayList(filteredRecipe);
+  } else if (keyword == '치즈') {
+    displayList(filteredRecipe);
+  } else if (keyword == '당근') {
+    displayList(filteredRecipe);
+  } else if (keyword == '두부') {
+    displayList(filteredRecipe);
+  } else if (keyword == '감자') {
+    displayList(filteredRecipe);
+  } else {
+    recipe.innerHTML =
+      '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+  }
 }
 btn.addEventListener('click', () => {
   const keyword = document.querySelector('input').value;
 
   searchRecipe(keyword);
 });
-displayList(cooking);
+
+recipe.innerHTML =
+  '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+  </head>
+  <body>
+    <header>
+      <input type="search" placeholder="검색" />
+      <button id="search-btn">검색</button>
+    </header>
+  </body>
+  <script>
+    const search = document.querySelector('#search-btn');
+    // const keyword = document.querySelector('#search').value;
+    search.addEventListener('click', () => {
+      // window.location.href = `html.html?id=${product.id}`;
+      window.location.href = `search.html`;
+    });
+  </script>
+</html>
