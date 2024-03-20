@@ -1,0 +1,229 @@
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1.5px solid rgb(255, 186, 58);
+  /* background-color: rgb(255, 182, 47); */
+}
+
+.header * {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  list-style: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80%;
+  width: 94%;
+}
+
+/* header-left-side */
+@keyframes left-side-border-animation {
+  0% {
+    border-color: #ff6347;
+    box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+    transform: rotate(0deg);
+  }
+  50% {
+    border-color: #4682b4;
+    box-shadow: 0 0 20px rgba(70, 130, 180, 0.5);
+    transform: rotate(8deg);
+  }
+  75% {
+    border-color: #ff6347;
+    box-shadow: 0 0 20px rgba(255, 99, 71, 0.5);
+    transform: rotate(-8deg);
+  }
+  100% {
+    border-color: #ff6347;
+    box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+    transform: rotate(0deg);
+  }
+}
+
+.left-side {
+  border: 4px solid;
+  border-radius: 15px;
+  animation: left-side-border-animation 3s linear infinite;
+  padding: 6px;
+  background-color: yellow;
+}
+
+@keyframes site-name {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.left-side .site-name {
+  animation: site-name 2s ease-in-out infinite;
+}
+
+.left-side .site-name .bake {
+  font-size: 36px;
+  font-weight: 700;
+  vertical-align: top;
+  color: rgb(0, 129, 0);
+}
+
+.left-side .site-name .it {
+  font-size: 32px;
+  font-weight: 700;
+  vertical-align: bottom;
+  color: rgb(0, 0, 0);
+}
+
+.left-side .site-name .easy {
+  font-size: 48px;
+  font-weight: 900;
+  color: rgb(219, 142, 0);
+}
+
+/* header-center */
+.center {
+  width: 440px;
+  margin: -50px;
+}
+
+.center .menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
+.center .menu li {
+  font-size: 24px;
+  font-weight: 550;
+  padding: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+
+  /* -------------------------------------------------------------------- */
+  position: relative;
+  overflow: hidden;
+}
+
+.center .menu li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 186, 58);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.center .menu li:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.center .menu li *:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: yellow;
+  border: 1px solid orange;
+  color: rgb(219, 142, 0);
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+
+/* header-right-side */
+
+.right-side {
+  margin-right: 15px;
+}
+
+.right-side .material-symbols-outlined {
+  font-size: 30px;
+  margin-left: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* ------------------------------------------------------- */
+
+.right-side .material-symbols-outlined::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 186, 58);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.right-side .material-symbols-outlined:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.right-side .material-symbols-outlined *:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: yellow;
+  border: 1px solid orange;
+  color: rgb(219, 142, 0);
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+/* responsive */
+@media screen and (max-width: 960px) {
+  .center .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 164px;
+    transition: 0.1s;
+    border: 1px solid rgb(255, 186, 58);
+    border-radius: 10px;
+    background-color: rgb(255, 235, 195);
+    width: 240px;
+    margin-left: 68px;
+  }
+  .center .menu li {
+    padding: 10px;
+  }
+
+  .center .menu li:last-child {
+    margin-bottom: 8px;
+  }
+
+  .left-side {
+    flex-shrink: 0;
+  }
+  .right-side {
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .left-side {
+    margin-left: 30px;
+    transition: 0.15s;
+  }
+
+  .center .menu {
+    display: none;
+  }
+
+  .right-side .material-symbols-outlined {
+    font-size: 36px;
+    transition: 0.15s;
+  }
+}
