@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   border-bottom: 1.5px solid rgb(255, 186, 58);
-  /* background-color: rgb(255, 182, 47); */
 }
 
 .header * {
@@ -22,7 +21,7 @@
 }
 
 /* header-left-side */
-@keyframes left-side-border-animation {
+/* @keyframes left-side-border-animation {
   0% {
     border-color: #ff6347;
     box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
@@ -43,7 +42,7 @@
     box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
     transform: rotate(0deg);
   }
-}
+} */
 
 .left-side {
   border: 4px solid;
