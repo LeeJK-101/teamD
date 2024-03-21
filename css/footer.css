@@ -138,6 +138,7 @@ h5 {
   .row {
     display: flex;
     flex-direction: column;
+    margin: 60px;
   }
   .copy-right {
     margin-left: 30px;
