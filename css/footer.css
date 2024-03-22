@@ -110,7 +110,7 @@ h4 {
   flex-shrink: 0;
 }
 
-/* footer-contact us */
+/* contact us */
 h5 {
   color: #85ff7b;
   margin-bottom: 10px;
@@ -138,6 +138,7 @@ h5 {
   margin: 10px;
 }
 
+/* responsive */
 @media screen and (max-width: 660px) {
   .row {
     display: flex;
@@ -148,7 +149,6 @@ h5 {
     margin-left: 30px;
   }
   .footer-company {
-    margin-right: 20px;
     margin-bottom: 0px;
   }
   .footer-help {
