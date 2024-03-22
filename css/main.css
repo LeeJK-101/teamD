@@ -1,0 +1,71 @@
+input:focus {
+  outline: RGB(0, 0, 0, 0);
+}
+.header__search {
+  position: relative;
+  text-align: center;
+}
+
+.header__search input {
+  width: 760px;
+  height: 56px;
+  font-size: 24px;
+  color: rgb(74, 74, 74);
+  box-sizing: border-box;
+  padding: 0 0 0 30px;
+  background-color: fff;
+  border-radius: 50px;
+  border: 5px solid greenyellow;
+}
+
+.header__search input:hover {
+  border-color: #ddd;
+}
+
+.header__search > input:focus {
+  border: 5px solid green;
+  /* focus썼을 때 outline-color로 써야 함. */
+}
+
+.fa-solid .fa-magnifying-glass {
+  border: 1px solid red;
+}
+
+.fa-solid.fa-magnifying-glass {
+  font-size: 30px;
+  color: darkgrey;
+  position: absolute;
+  transform: translate(-200%, 40%);
+  /* border: 1px solid red; */
+}
+
+.search_bar {
+  background-color: (
+    91deg,
+    #7aa3f5 23.73%,
+    #c382da 58.12%,
+    #f9ab4f 82.09%,
+    #f9ab4f 82.1%,
+    #f9ab4f 82.1%,
+    #f9ab4f 82.11%,
+    #ffc540 99.48%
+  );
+}
+
+.search_bar input {
+  width: 760px;
+  height: 56px;
+  font-size: 24px;
+  color: fff;
+  box-sizing: border-box;
+  padding: 0 0 0 30px;
+  background-color: fff;
+  border-radius: 50px;
+}
+
+.elements {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ffc540;
+}
