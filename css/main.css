@@ -1,3 +1,9 @@
+/* input focus 검은색 라인 지우기 */
+input:focus {
+  outline: RGB(0, 0, 0, 0);
+}
+
+/* 헤더 부분 */
 header {
   width: 1200px;
   height: 200px;
@@ -7,10 +13,9 @@ header {
   /* border: 5px solid red; */
 }
 
-input:focus {
-  outline: RGB(0, 0, 0, 0);
+header .logo {
+  text-align: center;
 }
-
 .header__search {
   position: relative;
   text-align: center;
