@@ -83,6 +83,7 @@ header .logo {
   font-size: 30px;
   font-weight: 100;
   line-height: 120%;
+  color:#6e6e6e
 }
 .introduce span {
   font-weight: 400;
@@ -118,7 +119,7 @@ header .logo {
 
 .tip {
   width: 180px;
-  height: 250px;
+  height: 280px;
   background-color: antiquewhite;
   border-radius: 10px;
 }
