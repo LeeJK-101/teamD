@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>검색결과</title>
     <script defer src="../js/search.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/search.css" />
   </head>
@@ -16,18 +20,16 @@
     <main>
       <section>
         <h2></h2>
-        <select>
-          <option value="평점순" class="grade">평점순</option>
-          <option value="조리시간순" class="timerate">조리시간순</option>
-        </select>
-        <!-- <ul>
-          <li class="timerate">조리시간순</li>
-          <li class="grade">평점순</li>
-        </ul> -->
         <div class="tab">
-          <ul>
-            <li class="cookingTime">초간단레시피만</li>
+          <ul class="filter">
+            <li class="cookingTime">10분레시피</li>
             <li class="dietFood">다이어트</li>
+            <li>비건</li>
+          </ul>
+          <ul class="depth">
+            <li class="grade">평점순</li>
+            <li class="timerate">조리시간순</li>
+            <li class="view">조회순</li>
           </ul>
         </div>
         <ul class="recipe"></ul>
