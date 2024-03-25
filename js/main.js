@@ -36,77 +36,82 @@ async function setRandomRecipeImages() {
   pick1.style.backgroundPosition = 'center';
   pick1.style.backgroundSize = 'cover';
   pick1.innerHTML = `
-              <div class="overlay">
-                  <p class="name">${pick1Recipe.name}</p>
-                  <p class="time"><i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${
-                    pick1Recipe.prep_time
-                  }분 소요</p>
-                  <p class="ingredients">${pick1Recipe.ingredients.join(
-                    ', '
-                  )}</p>
-              </div>
-          `;
+                <div class="overlay">
+                    <p class="name">${pick1Recipe.name}</p>
+                    <p class="time"><i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${
+                      pick1Recipe.prep_time
+                    }분 소요</p>
+                    <p class="ingredients">${pick1Recipe.ingredients.join(
+                      ', '
+                    )}</p>
+                </div>
+            `;
 
   pick2.style.backgroundImage = `url(${pick2Recipe.image})`;
   pick2.style.backgroundPosition = 'center';
   pick2.style.backgroundSize = 'cover';
   pick2.innerHTML = `
-              <div class="overlay">
-                  <p class="name">${pick2Recipe.name}</p>
-                  <p class="time"><i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${
-                    pick2Recipe.prep_time
-                  }분 소요</p>
-                  <p class="ingredients">${pick2Recipe.ingredients.join(
-                    ', '
-                  )}</p>
-              </div>
-          `;
+                <div class="overlay">
+                    <p class="name">${pick2Recipe.name}</p>
+                    <p class="time"><i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${
+                      pick2Recipe.prep_time
+                    }분 소요</p>
+                    <p class="ingredients">${pick2Recipe.ingredients.join(
+                      ', '
+                    )}</p>
+                </div>
+            `;
 
   pick3.style.backgroundImage = `url(${pick3Recipe.image})`;
   pick3.style.backgroundPosition = 'center';
   pick3.style.backgroundSize = 'cover';
   pick3.innerHTML = `
-              <div class="overlay">
-                  <p class="name">${pick3Recipe.name}</p>
-                  <p class="time"><i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${
-                    pick3Recipe.prep_time
-                  }분 소요</p>
-                  <p class="ingredients">${pick3Recipe.ingredients.join(
-                    ', '
-                  )}</p>
-              </div>
-          `;
+                <div class="overlay">
+                    <p class="name">${pick3Recipe.name}</p>
+                    <p class="time"><i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${
+                      pick3Recipe.prep_time
+                    }분 소요</p>
+                    <p class="ingredients">${pick3Recipe.ingredients.join(
+                      ', '
+                    )}</p>
+                </div>
+            `;
 
   // 스타일 적용
   const overlayStyle = `
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              background-color: rgba(0, 0, 0, 0.7);
-              border-radius: 12px;
-              padding: 20px;
-          `;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-radius: 12px;
+                padding: 20px;
+            `;
+
+  // 클릭 이벤트 리스너 추가
+  pick1.addEventListener('click', () => redirectToDetailPage(pick1Recipe.id));
+  pick2.addEventListener('click', () => redirectToDetailPage(pick2Recipe.id));
+  pick3.addEventListener('click', () => redirectToDetailPage(pick3Recipe.id));
 
   const nameStyle = `
-              color: white;
-              font-size: 20px;
-              margin-bottom: 12px;
-          `;
+                color: white;
+                font-size: 20px;
+                margin-bottom: 12px;
+            `;
 
   const timeStyle = `
-              color: lightgrey;
-              font-size: 12px;
-              margin-bottom: 5px;
-          `;
+                color: lightgrey;
+                font-size: 12px;
+                margin-bottom: 5px;
+            `;
 
   const ingredientsStyle = `
-              color: white;
-              font-size: 14px;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-          `;
+                color: white;
+                font-size: 14px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            `;
 
   document.querySelectorAll('.overlay').forEach((overlay) => {
     overlay.style.cssText = overlayStyle;
@@ -116,12 +121,16 @@ async function setRandomRecipeImages() {
   });
 }
 
+// 상세 페이지로 새 탭에서 열리도록 이동하는 함수
+function redirectToDetailPage(id) {
+  window.open(`/html/detail.html?id=${id}`, '_blank');
+}
 // 페이지 로드 시 랜덤한 레시피 이미지 설정
 document.addEventListener('DOMContentLoaded', () => {
   setRandomRecipeImages();
-  loadRecipes();
 });
 
+// 슬라이드
 let n = 0;
 
 function slide() {
@@ -140,70 +149,70 @@ function slide() {
   slideItems[n].style.display = 'block';
 }
 
-setInterval(slide, 3000);
-// =================================================================================
-//
-//     6 종
-//
-// =================================================================================
-// async function loadRecipes() {
-//   const recipes = await fetchRecipes();
+setInterval(slide, 2000);
 
-//   const dishes = document.querySelectorAll('.dishes');
-
-//   dishes.forEach((dish, index) => {
-//     const recipe = recipes[index];
-//     dish.style.backgroundImage = `url(${recipe.image})`;
-//     dish.style.backgroundSize = 'cover';
-//     dish.style.backgroundPosition = 'center';
-//   });
-// }
-
-// async function fetchRecipes() {
-//   const response = await fetch('/js/recipe_data.json');
-//   const data = await response.json();
-//   // id 1001~1016 중에서 랜덤하게 6개 선택
-//   const selectedRecipes = data
-//     .filter((recipe) => recipe.id >= 1001 && recipe.id <= 1016)
-//     .slice(0, 6);
-//   return selectedRecipes;
-// }
-
-// loadRecipes();
-
-// 랜덤한 id를 반환하는 함수
-function getRandomId(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// 랜덤한 레시피 이미지를 설정하는 함수
-async function setRandomRecipeImages() {
+// 기존 6개의 .dishes에 레시피 이미지와 오버레이 설정하는 함수
+async function loadRecipes() {
   const recipes = await fetchRecipes();
+  const selectedRecipes = [];
 
   const dishes = document.querySelectorAll('.dishes');
 
-  // id 1001~1016 중에서 랜덤하게 6개 선택
-  const selectedIds = [];
-  while (selectedIds.length < 6) {
-    const id = getRandomId(1001, 1016).toString();
-    if (!selectedIds.includes(id)) {
-      selectedIds.push(id);
-    }
+  for (let dish of dishes) {
+    let randomRecipe;
+    do {
+      const randomIndex = Math.floor(Math.random() * (1016 - 1001 + 1)) + 1001;
+      randomRecipe = recipes.find((r) => r.id === randomIndex);
+    } while (selectedRecipes.includes(randomRecipe.id));
+
+    selectedRecipes.push(randomRecipe.id);
+
+    setDishBackground(dish, randomRecipe);
   }
-
-  const selectedRecipes = recipes.filter((recipe) =>
-    selectedIds.includes(recipe.id.toString())
-  );
-
-  dishes.forEach((dish, index) => {
-    const recipe = selectedRecipes[index];
-    dish.style.backgroundImage = `url(${recipe.image})`;
-    dish.style.backgroundSize = 'cover';
-    dish.style.backgroundPosition = 'center';
-  });
 }
 
-// 페이지 로드 시 랜덤한 레시피 이미지 설정
+function setDishBackground(dish, recipe) {
+  // 레시피 이미지 설정
+  dish.style.backgroundImage = `url(${recipe.image})`;
+  dish.style.backgroundSize = 'cover';
+  dish.style.backgroundPosition = 'center';
+
+  // 이미지 로드 후 오버레이 추가
+  const img = new Image();
+  img.src = recipe.image;
+  img.onload = () => {
+    addOverlay(dish, recipe);
+  };
+}
+
+function addOverlay(dish, recipe) {
+  // 오버레이 요소 생성 및 설정
+  const overlay = document.createElement('div');
+  overlay.className = 'dishesOverlay';
+  overlay.innerHTML = `
+    <span class="name">${recipe.name}</span>
+    <span class="time">
+      <i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${recipe.prep_time}분 소요
+    </span>
+  `;
+  dish.appendChild(overlay);
+
+  // 오버레이 스타일 설정
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+  overlay.style.color = 'white';
+  overlay.style.fontSize = '14px';
+  overlay.style.fontWeight = '500';
+  overlay.style.textAlign = 'left';
+  overlay.style.position = 'absolute';
+  overlay.style.bottom = '0';
+  overlay.style.left = '0';
+  overlay.style.right = '0';
+  overlay.style.padding = '10px';
+  overlay.style.transition = 'opacity 0.3s ease';
+  overlay.style.opacity = '0';
+}
+
+// 페이지 로드 시 6개의 레시피 이미지 설정 및 오버레이 적용
 document.addEventListener('DOMContentLoaded', () => {
-  setRandomRecipeImages();
+  loadRecipes();
 });
