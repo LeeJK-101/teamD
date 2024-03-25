@@ -1,0 +1,129 @@
+header {
+  height: 150px;
+  background-color: rgb(219, 255, 183);
+  text-align: center;
+}
+footer {
+  height: 150px;
+  background-color: rgb(219, 255, 183);
+  text-align: center;
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+h2 {
+  margin: 20px;
+  font-size: 24px;
+}
+.tab {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  height: 100px;
+}
+.filter {
+  font-size: 14px;
+  opacity: 0.6;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.filter li:hover {
+  font-weight: bold;
+}
+
+.depth {
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(181, 181, 181);
+  padding: 5px;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  overflow: hidden;
+}
+.depth:hover {
+  height: 90px;
+}
+.depth li {
+  padding: 5px 0;
+  width: 100%;
+  height: 100%;
+}
+.depth li:hover {
+  background-color: rgb(219, 219, 219);
+}
+img {
+  width: 100%;
+  border-radius: 3%;
+}
+.recipe {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.recipe li {
+  width: 250px;
+  height: 250px;
+  margin: 80px 10px;
+  flex-shrink: 0;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+.recipe li:hover img {
+  filter: brightness(80%);
+}
+.recipe li p {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .recipe {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .recipe li {
+    width: 40vw;
+    height: 40vw;
+  }
+}
+@media screen and (max-width: 580px) {
+  .recipe li {
+    width: 80vw;
+    height: 80vw;
+  }
+  .filter {
+    flex-wrap: wrap;
+  }
+  .filter li {
+    width: 33%;
+    margin: 5px 0;
+    flex-shrink: 0;
+  }
+  .depth {
+    width: 30%;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}

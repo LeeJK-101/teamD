@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Header</title>
-
+    <link rel="stylesheet" href="../css/reset.css">
     <!-- general css, header css -->
     <link rel="stylesheet" href="../css/general.css" />
     <link rel="stylesheet" href="../css/header.css" />
@@ -28,31 +28,32 @@
   </head>
   <body>
     <!-- header -->
-    <header class="header">
+    <header>
       <!-- nav -->
-      <nav class="nav">
-        <span class="material-symbols-outlined navOpenBtn"> menu </span>
-        <a href="#" class="logo"><img src="../img/logo3.svg" alt="logo" width="190px"></a>
-        <!-- nav-menu -->
-        <ul class="nav-links">
-          <span class="material-symbols-outlined navCloseBtn"> close </span>
-          <li><a href="#">계정</li>
-          <li><a href="#">마이 페이지</a></li>
-          <li><a href="#">전체 카테고리</a></li>
-          <li><a href="#">텍스트</a></li>
-          <li><a href="#">텍스트</a></li>
-        </ul>
-       
-
-        <!-- search -->
-        <span class="material-symbols-outlined search-icon" id="searchIcon"> search </span>
-        <div class="search-box">
-          <span class="material-symbols-outlined search-icon"> search </span>
-          <input type="text" placeholder="검색" />
-        </div>
+      <article class="header_inner">
+        <a href="#"
+            ><span class="material-symbols-outlined menu" id="burger"> menu </span></a
+          >
+        <a href="#" class="logo"><img src="../img/logo3.svg" alt="logo"></a>
+        <nav class="nomalNav">
+          <!-- nav-menu -->
+          <ul class="nav-links">
+            <li><a href="#">계정</li>
+            <li><a href="#">마이 페이지</a></li>
+            <li><a href="#">전체 카테고리</a></li>
+            <li><a href="#">텍스트</a></li>
+            <li><a href="#">텍스트</a></li>
+          </ul>
+        </nav>
         
+        <div class="search-box hidden">
+          <input type="text"  placeholder="검색" />
+          <span class="material-symbols-outlined search-icon" id="searchBtn">search </span>
+        </div>
+        <!-- search -->
         <!-- nav-right-side -->
-        <div class="lastThree">
+        <div class="icons">
+          <span class="material-symbols-outlined search-icon" id="searchIcon">search </span>
           <a href="#"
             ><span class="material-symbols-outlined account">
               account_circle
@@ -61,11 +62,22 @@
           <a href="#"
             ><span class="material-symbols-outlined favorite"> favorite </span></a
           >
-          <a href="#"
-            ><span class="material-symbols-outlined menu"> menu </span></a
-          >
         </div>
-      </nav>>
+      </article>
+      <article class="hidden modal">
+        <nav class="hiddenNav">
+          <ul class="mobileNav">
+            <li><a href="#">계정</li>
+            <li><a href="#">마이 페이지</a></li>
+            <li><a href="#">전체 카테고리</a></li>
+            <li><a href="#">텍스트</a></li>
+            <li><a href="#">텍스트</a></li>
+          </ul>
+        </nav>
+        <div class="modalBack"></div>
+      </article>
+      
+      
     </header>
   </body>
 </html>
