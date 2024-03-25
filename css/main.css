@@ -99,15 +99,14 @@ header .logo {
   flex-wrap: wrap;
   overflow: hidden;
   border-radius: 12px;
-  position: relative;
 
   box-shadow: 4px 4px 4px lightgray;
 }
 .today {
   width: 580px;
   height: 350px;
-  /* background-color: antiquewhite; */
   border-radius: 12px;
+  position: relative; /* 추가 */
 }
 
 .tips_box {
@@ -137,9 +136,12 @@ header .logo {
 .dishes {
   width: 180px;
   height: 180px;
-  background-color: antiquewhite;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url(/img//logo/logotype04_c1green.svg);
+  background-position: center center;
   border-radius: 12px;
-  font-display: relative;
+  display: relative;
 }
 
 .elements {
@@ -147,4 +149,15 @@ header .logo {
   height: 200px;
   border-radius: 50%;
   background-color: #ffc540;
+}
+
+.today .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 1; /* 이 값을 추가하여 .overlay를 상위 레벨로 설정합니다. */
 }
