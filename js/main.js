@@ -170,3 +170,40 @@ setInterval(slide, 3000);
 // }
 
 // loadRecipes();
+
+// 랜덤한 id를 반환하는 함수
+function getRandomId(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// 랜덤한 레시피 이미지를 설정하는 함수
+async function setRandomRecipeImages() {
+  const recipes = await fetchRecipes();
+
+  const dishes = document.querySelectorAll('.dishes');
+
+  // id 1001~1016 중에서 랜덤하게 6개 선택
+  const selectedIds = [];
+  while (selectedIds.length < 6) {
+    const id = getRandomId(1001, 1016).toString();
+    if (!selectedIds.includes(id)) {
+      selectedIds.push(id);
+    }
+  }
+
+  const selectedRecipes = recipes.filter((recipe) =>
+    selectedIds.includes(recipe.id.toString())
+  );
+
+  dishes.forEach((dish, index) => {
+    const recipe = selectedRecipes[index];
+    dish.style.backgroundImage = `url(${recipe.image})`;
+    dish.style.backgroundSize = 'cover';
+    dish.style.backgroundPosition = 'center';
+  });
+}
+
+// 페이지 로드 시 랜덤한 레시피 이미지 설정
+document.addEventListener('DOMContentLoaded', () => {
+  setRandomRecipeImages();
+});
