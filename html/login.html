@@ -2,156 +2,119 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>자취 식탁</title>
-    <link rel="icon" href="../img/icon_carrot.png" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
+    <link rel="icon" href="../img/icon_cook2.png" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <title>자취요리사</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
-        background-color: #fff;
-        font-size: 14px;
       }
       body {
-        color: #333;
-      }
-      a {
-        text-decoration: none;
-        list-style: none;
-      }
-      #header {
-        background-color: orange;
-        height: 100px;
-        width: 100vw;
+        background-image: url(../img/bg_cook.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         position: relative;
+        height: 100vh;
+        z-index: 0;
+        font-weight: normal;
+        display: block;
+      }
+      body::after {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        content: '';
+        background-color: #000;
+        opacity: 0.3;
+      }
+      section {
+        padding: 7em;
+        display: block;
+      }
+      .container {
+        width: 100%;
+        margin: auto;
       }
       .logo {
-        position: absolute;
-      }
-      .logo a img {
-        width: 100px;
-        height: 100px;
-      }
-      #footer {
-        bottom: 0;
-        position: absolute;
-        width: 100vw;
-        height: 100px;
-        background-color: #333;
-        color: white;
-      }
-      h2 {
         text-align: center;
-        font-size: 40px;
+        margin-bottom: 3rem;
       }
-      .loginBox {
+      .sign-in,
+      .sign-up {
+        display: none;
+      }
+      .sign-in:checked + .tab,
+      .sign-up:checked + .tab {
+        color: #fff;
+        border-color: #85ff7b;
+      }
+      .login-wrap {
         text-align: center;
-        margin: auto;
-        padding: 100px;
-        width: 50vw;
-        height: 50vh;
-        /* background-color: bisque; */
-      }
-      input {
-        padding: 10px;
-        width: 100%;
-        border-style: none;
-        border: 1px solid #333;
-        border-radius: 10px;
-      }
-      .loginBox {
-        flex: 1 0 auto;
-        margin: 0px auto;
-        width: 300px;
-        max-width: 300px;
-        display: flex;
-        /* -webkit-box-pack: center; */
-        justify-content: center;
-        /* -webkit-box-align: center; */
-        align-items: center;
-        flex-direction: column;
-        box-sizing: border-box;
-        padding: 40px 0px;
-      }
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        color: gainsboro;
-      }
-      button {
-        border-style: none;
-      }
-      .btn_login {
-        padding: 10px;
-        border: 1px solid orange;
-        background-color: orange;
-        color: white;
-        border-radius: 10px;
-        cursor: pointer;
-        width: 300px;
-        max-width: 300px;
-      }
-      .btn_login:hover {
-        box-shadow: 2px 2px 5px grey;
       }
     </style>
   </head>
   <body>
-    <div>
-      <header id="header">
+    <section>
+      <div class="container">
         <div class="logo">
-          <a href="#"
-            ><img
-              src="../img/icon_carrot.png"
-              alt="당근을 칼로 반토막 내는 아이콘"
-          /></a>
+          <a href="#"><img src="../img/logo.svg" alt="자취요리사" /></a>
         </div>
-      </header>
-      <footer id="footer"></footer>
-    </div>
-    <div class="loginBox">
-      <a href="#"
-        ><img src="../img/icon_carrot.png" alt="당근을 칼로 반토막 내는 아이콘"
-      /></a>
-      <form>
-        <div class="inputBox">
-          <span class="material-symbols-outlined"
-            >person
-            <input
-              type="text"
-              name="id"
-              position="top"
-              placeholder="아이디"
-              maxlength="13"
-            />
-          </span>
-        </div>
-
-        <div class="inputBox">
-          <span class="material-symbols-outlined">
-            lock
-            <input
-              type="password"
-              name="password"
-              position="top"
-              placeholder="비밀번호"
-              maxlength="13"
-            />
-          </span>
-        </div>
-        <br />
-        <button class="btn_login">로그인</button>
-      </form>
-      <br />
-      <div>
-        <a href="#">회원가입</a>
-        <span>ㅣ</span>
-        <a href="#">아이디/비밀번호 찾기</a>
+        <div class="login-wrap">
+            <div class="login-html">
+              <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+              <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+              <div class="login-form">
+                <div class="sign-in-htm">
+                  <div class="group">
+                    <input type="text" class="input" placeholder="Username">
+                  </div>
+                  <div class="group">
+                    <input type="password" class="input" data-type="password" placeholder="Password">
+                  </div>
+                  <div class="group">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label for="check"><span class="icon"></span>Remember me</label>
+                  </div>
+                  <div class="group">
+                    <input type="submit" class="button" value="Sign In">
+                  </div>
+                  <div class="hr"></div>
+                  <div class="foot-lnk">
+                    <a href="#">Forgot Password?</a>
+                  </div>
+                </div>
+                <div class="sign-up-htm">
+                  <div class="group">
+                    <input type="text" class="input" placeholder="Username">
+                  </div>
+                  <div class="group">
+                    <input type="password" class="input" data-type="password" placeholder="Password">
+                  </div>
+                  <div class="group">
+                    <input type="password" class="input" data-type="password" placeholder="Repeat Password">
+                  </div>
+                  <div class="group">
+                    <input type="text" class="input" placeholder="Email Address">
+                  </div>
+                  <div class="group">
+                    <input type="submit" class="button" value="Sign Up">
+                  </div>
+                  <div class="hr"></div>
+                  <div class="foot-lnk">
+                    <label for="tab-1">Already Member?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
+    </section>
   </body>
 </html>
