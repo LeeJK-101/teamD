@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자취 식탁</title>
+    <link rel="icon" href="../img/icon_carrot.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #fff;
+        font-size: 14px;
+      }
+      body {
+        color: #333;
+      }
+      a {
+        text-decoration: none;
+        list-style: none;
+      }
+      #header {
+        background-color: orange;
+        height: 100px;
+        width: 100vw;
+        position: relative;
+      }
+      .logo {
+        position: absolute;
+      }
+      .logo a img {
+        width: 100px;
+        height: 100px;
+      }
+      #footer {
+        bottom: 0;
+        position: absolute;
+        width: 100vw;
+        height: 100px;
+        background-color: #333;
+        color: white;
+      }
+      h2 {
+        text-align: center;
+        font-size: 40px;
+      }
+      .loginBox {
+        text-align: center;
+        margin: auto;
+        padding: 100px;
+        width: 50vw;
+        height: 50vh;
+        /* background-color: bisque; */
+      }
+      input {
+        padding: 10px;
+        width: 100%;
+        border-style: none;
+        border: 1px solid #333;
+        border-radius: 10px;
+      }
+      .loginBox {
+        flex: 1 0 auto;
+        margin: 0px auto;
+        width: 300px;
+        max-width: 300px;
+        display: flex;
+        /* -webkit-box-pack: center; */
+        justify-content: center;
+        /* -webkit-box-align: center; */
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 40px 0px;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        color: gainsboro;
+      }
+      button {
+        border-style: none;
+      }
+      .btn_login {
+        padding: 10px;
+        border: 1px solid orange;
+        background-color: orange;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 300px;
+        max-width: 300px;
+      }
+      .btn_login:hover {
+        box-shadow: 2px 2px 5px grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <header id="header">
+        <div class="logo">
+          <a href="#"
+            ><img
+              src="../img/icon_carrot.png"
+              alt="당근을 칼로 반토막 내는 아이콘"
+          /></a>
+        </div>
+      </header>
+      <footer id="footer"></footer>
+    </div>
+    <div class="loginBox">
+      <a href="#"
+        ><img src="../img/icon_carrot.png" alt="당근을 칼로 반토막 내는 아이콘"
+      /></a>
+      <form>
+        <div class="inputBox">
+          <span class="material-symbols-outlined"
+            >person
+            <input
+              type="text"
+              name="id"
+              position="top"
+              placeholder="아이디"
+              maxlength="13"
+            />
+          </span>
+        </div>
+
+        <div class="inputBox">
+          <span class="material-symbols-outlined">
+            lock
+            <input
+              type="password"
+              name="password"
+              position="top"
+              placeholder="비밀번호"
+              maxlength="13"
+            />
+          </span>
+        </div>
+        <br />
+        <button class="btn_login">로그인</button>
+      </form>
+      <br />
+      <div>
+        <a href="#">회원가입</a>
+        <span>ㅣ</span>
+        <a href="#">아이디/비밀번호 찾기</a>
+      </div>
+    </div>
+  </body>
+</html>
