@@ -31,29 +31,41 @@
     <header class="header">
       <!-- nav -->
       <nav class="nav">
-        <!-- header-left-side -->
-        <div class="left-side">
-          <div class="site-name">
-            <a href="#"><img src="../img/LOGO.svg" alt="logo" /></a>
-          </div>
+        <span class="material-symbols-outlined navOpenBtn"> menu </span>
+        <a href="#" class="logo"><img src="../img/logo3.svg" alt="logo" width="190px"></a>
+        <!-- nav-menu -->
+        <ul class="nav-links">
+          <span class="material-symbols-outlined navCloseBtn"> close </span>
+          <li><a href="#">계정</li>
+          <li><a href="#">마이 페이지</a></li>
+          <li><a href="#">전체 카테고리</a></li>
+          <li><a href="#">텍스트</a></li>
+          <li><a href="#">텍스트</a></li>
+        </ul>
+       
+
+        <!-- search -->
+        <span class="material-symbols-outlined search-icon" id="searchIcon"> search </span>
+        <div class="search-box">
+          <span class="material-symbols-outlined search-icon"> search </span>
+          <input type="text" placeholder="검색" />
         </div>
-
-        <!-- header-center -->
-        <div class="center"></div>
-
-        <!-- header-right-side -->
-        <div class="right-side">
-          <span class="material-symbols-outlined account-circle"
-            ><a href="#">account_circle</a>
-          </span>
-          <span class="material-symbols-outlined favorite"
-            ><a href="#">favorite</a>
-          </span>
-          <span class="material-symbols-outlined hamburger-menu"
-            ><a href="#">menu</a></span
+        
+        <!-- nav-right-side -->
+        <div class="lastThree">
+          <a href="#"
+            ><span class="material-symbols-outlined account">
+              account_circle
+            </span></a
+          >
+          <a href="#"
+            ><span class="material-symbols-outlined favorite"> favorite </span></a
+          >
+          <a href="#"
+            ><span class="material-symbols-outlined menu"> menu </span></a
           >
         </div>
-      </nav>
+      </nav>>
     </header>
   </body>
 </html>
