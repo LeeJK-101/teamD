@@ -201,6 +201,7 @@ function searchRecipe(keyword) {
   let normal = true;
   let filteredConvenience = false; //간편식 필터된 상태
   let filteredDiet = false; //다이어트식 필터된 상태
+  let none = false;
 
   if (keyword == '계란') {
     //입력한 키워드 값에 따라 필터된 cooking 배열을 display
@@ -226,18 +227,19 @@ function searchRecipe(keyword) {
   } else {
     recipe.innerHTML =
       '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
-
-    // 해당하는 키워드가 없을 시 레시피가 없음을 알림
+    none = true;
   }
 
   // --------------------필터탭----------------------------------------------
 
   convenienceBtn.addEventListener('click', () => {
+    none = false;
     if (simple == '') {
       recipe.innerHTML =
         '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
       h2.innerHTML = '개의 레시피가 검색되었습니다';
       h2.prepend(simple.length);
+      none = true;
       normal = false;
       filteredDiet = true;
       filteredConvenience = false;
@@ -249,11 +251,13 @@ function searchRecipe(keyword) {
       filteredConvenience = true;
       filteredDiet = false;
     }
+
     convenienceBtn.style.color = 'rgba(119, 219, 101, 0.716)';
     dietFoodBtn.style.color = 'black';
   });
 
   dietFoodBtn.addEventListener('click', () => {
+    none = false;
     if (dietFood == '') {
       recipe.innerHTML =
         '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
@@ -262,6 +266,7 @@ function searchRecipe(keyword) {
       filteredDiet = true;
       filteredConvenience = false;
       normal = false;
+      none = true;
     } else {
       displayList(dietFood);
       h2.innerHTML = '개의 레시피가 검색되었습니다';
@@ -270,8 +275,9 @@ function searchRecipe(keyword) {
       filteredDiet = true;
       filteredConvenience = false;
     }
-    dietFoodBtn.style.color = 'rgba(119, 219, 101, 0.716)';
+
     convenienceBtn.style.color = 'black';
+    dietFoodBtn.style.color = 'rgba(119, 219, 101, 0.716)';
   });
   // --------------------배열 순서--------------------------------------
 
@@ -288,10 +294,22 @@ function searchRecipe(keyword) {
     });
     if (filteredConvenience) {
       displayList(gradeArrConv);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (filteredDiet) {
       displayList(gradeArrDiet);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (normal) {
       displayList(gradeArr);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     }
     gradeBtn.style.fontWeight = 'bold';
     timeBtn.style.fontWeight = 'normal';
@@ -310,10 +328,22 @@ function searchRecipe(keyword) {
     });
     if (filteredConvenience) {
       displayList(timeArrConv); //필터된 배열 디스플레이
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (filteredDiet) {
       displayList(timeArrDiet); // 필터 전 배열 디스플레이
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (normal) {
       displayList(timeArr);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     }
     timeBtn.style.fontWeight = 'bold';
     gradeBtn.style.fontWeight = 'normal';
@@ -332,10 +362,22 @@ function searchRecipe(keyword) {
     });
     if (filteredConvenience) {
       displayList(viewArrConv);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (filteredDiet) {
       displayList(viewArrDiet);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (normal) {
       displayList(viewArr);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     }
     timeBtn.style.fontWeight = 'normal';
     gradeBtn.style.fontWeight = 'normal';
@@ -349,9 +391,16 @@ searchBtn.addEventListener('click', () => {
   if (keyword == '') {
     recipe.innerHTML =
       '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+    none = true;
   } else {
     searchRecipe(keyword);
   }
+  dietFoodBtn.style.color = 'black';
+  convenienceBtn.style.color = 'black';
+  depth.insertBefore(gradeBtn, depth.firstChild);
+  gradeBtn.style.fontWeight = 'bold';
+  timeBtn.style.fontWeight = 'normal';
+  viewBtn.style.fontWeight = 'normal';
 });
 
 searchRecipe(productId);
