@@ -1,7 +1,8 @@
+recipe_data.json 설명
+  "id" id
   "요리명" name
   "요리사진" image
-  "주재료" main_ingredients
-  "부재료" additional_ingredients
+  "재료" ingredients  
   "요리 방법" steps
   "분량" serving_size
   "칼로리"calories
