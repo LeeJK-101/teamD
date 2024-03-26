@@ -151,7 +151,9 @@ function slide() {
 
 setInterval(slide, 2000);
 
+
 // 기존 6개의 .dishes에 레시피 이미지와 오버레이 설정하는 함수
+
 async function loadRecipes() {
   const recipes = await fetchRecipes();
   const selectedRecipes = [];
@@ -172,12 +174,10 @@ async function loadRecipes() {
 }
 
 function setDishBackground(dish, recipe) {
-  // 레시피 이미지 설정
   dish.style.backgroundImage = `url(${recipe.image})`;
   dish.style.backgroundSize = 'cover';
   dish.style.backgroundPosition = 'center';
 
-  // 이미지 로드 후 오버레이 추가
   const img = new Image();
   img.src = recipe.image;
   img.onload = () => {
@@ -186,33 +186,79 @@ function setDishBackground(dish, recipe) {
 }
 
 function addOverlay(dish, recipe) {
-  // 오버레이 요소 생성 및 설정
   const overlay = document.createElement('div');
   overlay.className = 'dishesOverlay';
   overlay.innerHTML = `
-    <span class="name">${recipe.name}</span>
-    <span class="time">
-      <i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${recipe.prep_time}분 소요
-    </span>
+    <p class="name" style="font-size: 25px; font-weight:300;  line-height: 30px;word-break : keep-all;word-wrap:break-word" >${recipe.name}</p>
+    <p class="time" style="font-size: 12px; color: lightgrey; margin-top:15px">
+      <i class="fas fa-clock" ></i> 약 ${recipe.prep_time}분 소요
+    </p>
   `;
+
   dish.appendChild(overlay);
 
-  // 오버레이 스타일 설정
-  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
   overlay.style.color = 'white';
-  overlay.style.fontSize = '14px';
   overlay.style.fontWeight = '500';
   overlay.style.textAlign = 'left';
-  overlay.style.position = 'absolute';
-  overlay.style.bottom = '0';
+  overlay.style.position = 'relative';
+  overlay.style.top = '0';
   overlay.style.left = '0';
-  overlay.style.right = '0';
-  overlay.style.padding = '10px';
+  overlay.style.padding = "14px";
   overlay.style.transition = 'opacity 0.3s ease';
+  overlay.style.opacity = '0';
+  overlay.style.boxSizing = 'border-box'
+  
+
+
+   // 클릭 이벤트 추가
+   dish.addEventListener('click', () => {
+    redirectToDetailPage(recipe.id);
+  });
+}
+
+
+//새창 주소
+function redirectToDetailPage(id) {
+  window.open(`/html/detail.html?id=${id}`, '_blank');
+}
+
+// 마우스 호버 시 오버레이 표시 및 숨김
+document.addEventListener('DOMContentLoaded', () => {
+  loadRecipes();
+
+  const dishes = document.querySelectorAll('.dishes');
+  dishes.forEach((dish) => {
+    dish.addEventListener('mouseover', function() {
+      showDishOverlay(this);
+    });
+    dish.addEventListener('mouseout', function() {
+      hideDishOverlay(this);
+    });
+  });
+});
+
+
+function showDishOverlay(dish) {
+  const overlay = dish.querySelector('.dishesOverlay');
+  overlay.style.opacity = '1';
+}
+
+function hideDishOverlay(dish) {
+  const overlay = dish.querySelector('.dishesOverlay');
   overlay.style.opacity = '0';
 }
 
-// 페이지 로드 시 6개의 레시피 이미지 설정 및 오버레이 적용
-document.addEventListener('DOMContentLoaded', () => {
-  loadRecipes();
+
+
+
+gsap.from(".elements", {
+  opacity: 0, 
+  y: 200, 
+  duration: 10,
+  ease: "none",
+  repeat: -1,
+  rotation: 360,
 });
