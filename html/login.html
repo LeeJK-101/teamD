@@ -7,115 +7,85 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <link rel="icon" href="../img/icon_cook2.png" />
-    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <link rel="stylesheet" href="../css/reset.css" /> -->
     <link rel="stylesheet" href="../css/style.css" />
+    <script defer src="../js/main.js"></script>
     <title>자취요리사</title>
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      body {
-        background-image: url(../img/bg_cook.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
-        height: 100vh;
-        z-index: 0;
-        font-weight: normal;
-        display: block;
-      }
-      body::after {
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        content: '';
-        background-color: #000;
-        opacity: 0.3;
-      }
-      section {
-        padding: 7em;
-        display: block;
-      }
-      .container {
-        width: 100%;
-        margin: auto;
-      }
-      .logo {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-      .sign-in,
-      .sign-up {
-        display: none;
-      }
-      .sign-in:checked + .tab,
-      .sign-up:checked + .tab {
-        color: var(--main-color);
-        border-color: #85ff7b;
-      }
-      .login-wrap {
-        text-align: center;
-      }
-    </style>
   </head>
   <body>
-    <section>
-      <div class="container">
-        <div class="logo">
-          <a href="#"><img src="../img/logo/logotype02_c2white.svg" alt="자취요리사" /></a>
-        </div>
-        <div class="login-wrap">
-            <div class="login-html">
-              <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">SIGN IN</label>
-              <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">SIGN UP</label>
-              <div class="login-form">
-                <div class="sign-in-htm">
-                  <div class="group">
-                    <input type="text" class="input" placeholder="Username">
+    <body class="img js-fullheight">
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+              <a href="#"><img src="../img/logo/logotype01_c2black.svg" alt="자취요리사 로고" /></a>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+              <div class="login-wrap p-0">
+                <input id="signIn" type="radio" class="mb-4 text-center" checked>
+                <label for="signIn">SIGN IN</label></input>
+                <input id="signUp" type="radio" class="mb-4 text-center">
+                <label for="signUp">SIGN UP</label></input>
+                <form action="#" class="signin-form">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      required
+                    />
                   </div>
-                  <div class="group">
-                    <input type="password" class="input" data-type="password" placeholder="Password">
+                  <div class="form-group">
+                    <input
+                      id="password-field"
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                    />
+                    <span
+                      toggle="#password-field"
+                      class="fa fa-fw fa-eye field-icon toggle-password"
+                    ></span>
                   </div>
-                  <div class="group">
-                    <input id="check" type="checkbox" class="check" checked>
-                    <label for="check"><span class="icon"></span>Remember me</label>
+                  <div class="form-group">
+                    <button
+                      type="submit"
+                      class="form-control btn btn-primary submit px-3"
+                    >
+                      Sign In
+                    </button>
                   </div>
-                  <div class="group">
-                    <input type="submit" class="button" value="Sign In">
+                  <div class="form-group d-md-flex">
+                    <div class="w-50">
+                      <label class="checkbox-wrap checkbox-primary"
+                        >Remember Me
+                        <input type="checkbox" checked />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="w-50 text-md-right">
+                      <a href="#" style="color: #fff">Forgot Password</a>
+                    </div>
                   </div>
-                  <div class="hr"></div>
-                  <div class="foot-lnk">
-                    <a href="#">Forgot Password?</a>
-                  </div>
-                </div>
-                <div class="sign-up-htm">
-                  <div class="group">
-                    <input type="text" class="input" placeholder="Username">
-                  </div>
-                  <div class="group">
-                    <input type="password" class="input" data-type="password" placeholder="Password">
-                  </div>
-                  <div class="group">
-                    <input type="password" class="input" data-type="password" placeholder="Repeat Password">
-                  </div>
-                  <div class="group">
-                    <input type="text" class="input" placeholder="Email Address">
-                  </div>
-                  <div class="group">
-                    <input type="submit" class="button" value="Sign Up">
-                  </div>
-                  <div class="hr"></div>
-                  <div class="foot-lnk">
-                    <label for="tab-1">Already Member?</a>
-                  </div>
+                </form>
+                <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+                <div class="social d-flex text-center">
+                  <a href="#" class="px-2 py-2 mr-md-1 rounded"
+                    ><span class="ion-logo-facebook mr-2"></span> Facebook</a
+                  >
+                  <a href="#" class="px-2 py-2 ml-md-1 rounded"
+                    ><span class="ion-logo-twitter mr-2"></span> Twitter</a
+                  >
                 </div>
               </div>
             </div>
           </div>
-      </div>
+        </div>
       </section>
   </body>
 </html>
