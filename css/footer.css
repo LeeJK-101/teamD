@@ -1,12 +1,12 @@
-* {
+
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 /* footer */
-.footer {
-  position: absolute;
+.footerA {
   bottom: 0px;
   width: 100%;
   background: #24262b;

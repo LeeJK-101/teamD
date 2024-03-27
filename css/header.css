@@ -1,10 +1,6 @@
 * {
   box-sizing: border-box;
 }
-body {
-  height: 5000px;
-  background-color: rgb(249, 249, 249);
-}
 
 /* nav의 a태그들 white 로고의 색과 차이 있음 */
 a {
@@ -126,7 +122,8 @@ header {
   background-color: #fff;
   margin-right: 20px;
 }
-#searchBtn {
+
+#search-btn {
   color: pink;
   top: 3px;
   right: 50px;
