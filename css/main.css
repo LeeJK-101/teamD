@@ -1,0 +1,163 @@
+/* input focus 검은색 라인 지우기 */
+input:focus {
+  outline: RGB(0, 0, 0, 0);
+}
+
+/* 가로 사이즈 1200px */
+.wrap {
+  width: 1200px;
+  margin: auto;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 헤더 부분 */
+header {
+  /* background-color: pink; */
+  padding-bottom: 20px;
+  /* border: 5px solid red; */
+}
+
+header .logo {
+  text-align: center;
+  padding: 50px 0 10px 0;
+}
+.header__search {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.header__search input {
+  width: 760px;
+  height: 56px;
+  font-size: 24px;
+  color: rgb(74, 74, 74);
+  box-sizing: border-box;
+  padding: 0 0 0 30px;
+  background-color: fff;
+  border-radius: 50px;
+  border: 5px solid#85FF7B;
+}
+
+.header__search input:hover {
+  box-shadow: 4px 4px 4px #b37bff;
+}
+
+.header__search > input:focus {
+  border: 5px solid #14ff00;
+  /* focus썼을 때 outline-color로 써야 함. */
+  box-shadow: 4px 4px 4px #b37bff;
+}
+
+.fa-solid.fa-magnifying-glass {
+  font-size: 30px;
+  color: #6e6e6e;
+  position: absolute;
+  transform: translate(-200%, 40%);
+  /* border: 1px solid red; */
+}
+
+.search_bar input {
+  width: 760px;
+  height: 56px;
+  font-size: 24px;
+  color: fff;
+  box-sizing: border-box;
+  padding: 0 0 0 30px;
+  background-color: fff;
+  border-radius: 50px;
+}
+/* container */
+.container {
+  /* border: 5px solid blue; */
+}
+
+/* 소개*/
+.introduce {
+  background-color: greenyellow;
+  padding-left: 280px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 120%;
+  color: #6e6e6e;
+}
+.introduce span {
+  font-weight: 400;
+}
+
+.todaypicks_box {
+  width: 580px;
+  margin: 50px auto;
+  height: 350px;
+  /* background-color: gold; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 12px;
+
+  box-shadow: 4px 4px 4px lightgray;
+}
+.today {
+  width: 580px;
+  height: 350px;
+  border-radius: 12px;
+  position: relative; /* 추가 */
+}
+
+.tips_box {
+  padding: 50px 0;
+  background-color: palevioletred;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tip {
+  width: 180px;
+  height: 280px;
+  background-color: antiquewhite;
+  border-radius: 12px;
+}
+
+.dishes_box {
+  padding: 50px 220px;
+  background-color: rgb(161, 172, 233);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dishes {
+  width: 180px;
+  height: 180px;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url(/img//logo/logotype04_c1green.svg);
+  background-position: center center;
+  border-radius: 12px;
+  display: relative;
+}
+
+.elements {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ffc540;
+}
+
+.today .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 1; /* 이 값을 추가하여 .overlay를 상위 레벨로 설정합니다. */
+}
