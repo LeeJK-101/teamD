@@ -1,3 +1,4 @@
+
 const head = document.querySelector('.headerA');
 head.innerHTML = `<!-- nav -->
         <article class="header_inner">
@@ -154,6 +155,7 @@ foot.innerHTML = `<div class="footer-container">
         </div>
         </div>`;
 
+
 const searchIcon = document.querySelector('#searchIcon'),
   burger = document.querySelector('#burger'),
   hiddenBtn = document.querySelector('.hidden'),
@@ -162,6 +164,7 @@ const searchIcon = document.querySelector('#searchIcon'),
   modalBack = document.querySelector('.modalBack'),
   searchBox = document.querySelector('.search-box'),
   navCloseBtn = document.querySelector('.navCloseBtn');
+
 searchIcon.addEventListener('click', () => {
   nav.classList.toggle('hidden');
   searchBox.classList.toggle('hidden');
@@ -172,6 +175,7 @@ burger.addEventListener('click', () => {
 modalBack.addEventListener('click', () => {
   modal.classList.toggle('hidden');
 });
+
 const searchBtn2 = document.querySelector('#search-btn');
 
 searchBtn2.addEventListener('click', () => {
