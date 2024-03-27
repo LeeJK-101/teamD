@@ -151,7 +151,6 @@ function slide() {
 
 setInterval(slide, 2000);
 
-
 // 기존 6개의 .dishes에 레시피 이미지와 오버레이 설정하는 함수
 
 async function loadRecipes() {
@@ -198,27 +197,24 @@ function addOverlay(dish, recipe) {
   dish.appendChild(overlay);
 
   overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-  overlay.style.width = "100%";
-  overlay.style.height = "100%";
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
   overlay.style.color = 'white';
   overlay.style.fontWeight = '500';
   overlay.style.textAlign = 'left';
   overlay.style.position = 'relative';
   overlay.style.top = '0';
   overlay.style.left = '0';
-  overlay.style.padding = "14px";
+  overlay.style.padding = '14px';
   overlay.style.transition = 'opacity 0.3s ease';
   overlay.style.opacity = '0';
-  overlay.style.boxSizing = 'border-box'
-  
+  overlay.style.boxSizing = 'border-box';
 
-
-   // 클릭 이벤트 추가
-   dish.addEventListener('click', () => {
+  // 클릭 이벤트 추가
+  dish.addEventListener('click', () => {
     redirectToDetailPage(recipe.id);
   });
 }
-
 
 //새창 주소
 function redirectToDetailPage(id) {
@@ -231,15 +227,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dishes = document.querySelectorAll('.dishes');
   dishes.forEach((dish) => {
-    dish.addEventListener('mouseover', function() {
+    dish.addEventListener('mouseover', function () {
       showDishOverlay(this);
     });
-    dish.addEventListener('mouseout', function() {
+    dish.addEventListener('mouseout', function () {
       hideDishOverlay(this);
     });
   });
 });
-
 
 function showDishOverlay(dish) {
   const overlay = dish.querySelector('.dishesOverlay');
@@ -251,14 +246,67 @@ function hideDishOverlay(dish) {
   overlay.style.opacity = '0';
 }
 
-
-
-
-gsap.from(".elements", {
-  opacity: 0, 
-  y: 200, 
+// 애니메이션
+gsap.from('.elements', {
+  y: 200,
   duration: 10,
-  ease: "none",
+  ease: 'none',
   repeat: -1,
   rotation: 360,
 });
+
+const imageList = [
+  { src: 'img/mainimg/avocado.png', alt: '아보카도' },
+  { src: 'img/mainimg/bread1.png', alt: '식빵' },
+  { src: 'img/mainimg/bread2.png', alt: '식빵' },
+  { src: 'img/mainimg/cabbage.png', alt: '양배추' },
+  { src: 'img/mainimg/carrot.png', alt: '당근' },
+  { src: 'img/mainimg/cucumber.png', alt: '오이' },
+  { src: 'img/mainimg/cucumber1.png', alt: '오이' },
+  { src: 'img/mainimg/doobu.png', alt: '두부' },
+  { src: 'img/mainimg/egg.png', alt: '달걀' },
+  { src: 'img/mainimg/greenonion.png', alt: '대파' },
+  { src: 'img/mainimg/kimchi.png', alt: '김치' },
+  { src: 'img/mainimg/mu.png', alt: '무' },
+  { src: 'img/mainimg/onion.png', alt: '양파' },
+  { src: 'img/mainimg/potato.png', alt: '감자' },
+  { src: 'img/mainimg/slicepork.png', alt: '만능냉동삼겹' },
+  { src: 'img/mainimg/spam2.png', alt: '스팸' },
+  { src: 'img/mainimg/tomato.png', alt: '토마토' },
+];
+
+const els = ['.el1', '.el2', '.el3', '.el4'];
+
+els.forEach((el) => {
+  const randomImage = imageList[Math.floor(Math.random() * imageList.length)];
+
+  // 랜덤 이미지 및 alt 속성값 적용
+  document.querySelector(
+    el
+  ).innerHTML = `<a href="#"><img src="${randomImage.src}" alt="${randomImage.alt}" /></a>`;
+
+  gsap.set(el, {
+    x: () => Math.random() * (window.innerWidth - 50), // 랜덤한 x 위치
+    y: () => Math.random() * window.innerHeight, // 랜덤한 y 위치
+    transformOrigin: 'center center', // 이미지 중심을 회전 축으로 설정
+  });
+
+  // 이미지 사이즈 조절
+  const imgElement = document.querySelector(el + ' img');
+  imgElement.style.width = '400px';
+  imgElement.style.height = '400px';
+  imgElement.style.objectFit = 'cover';
+
+  // 클릭 이벤트 리스너 추가
+  document.querySelector(el).addEventListener('click', function () {
+    const keyword = document.querySelector(el + ' img').getAttribute('alt');
+    window.location.href = `search.html?class=${keyword}`;
+  });
+});
+
+const altValues = els.map((el) => {
+  const imgAlt = document.querySelector(el + ' img').getAttribute('alt');
+  return imgAlt;
+});
+
+console.log(altValues); // alt 속성값들을 배열로 출력
