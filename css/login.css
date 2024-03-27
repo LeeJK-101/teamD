@@ -1,6 +1,7 @@
 @import '../css/root.css';
 a {
   text-decoration: none;
+  color: inherit;
 }
 *,
 * ::before,
@@ -9,7 +10,7 @@ a {
   margin: 0;
 }
 body {
-  background-image: url(../img/bg_login.jpg);
+  background-image: url(../img/login/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -61,8 +62,11 @@ img {
   border-style: none;
   page-break-inside: avoid;
 }
-.whiteColor {
+.attrColor {
   color: white;
+}
+.attrColor:hover {
+  color: var(--sub-color);
 }
 .icon_sns {
   width: 32px;
