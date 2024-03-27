@@ -800,7 +800,7 @@ function searchRecipe(cooking, keyword) {
   });
 
   const filteredRecipe2 = cooking.filter((cook) => {
-    // return cook.name.includes(keyword);
+    return cook.name.includes(keyword);
   });
   const simple = filteredRecipe.filter((cook) => cook.prep_time <= 10); //초간단 레시피 필터
   const dietFood = filteredRecipe.filter((cook) => cook.calories <= 400);
