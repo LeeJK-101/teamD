@@ -4,6 +4,9 @@
 body {
   font-family: 'Noto Sans KR', sans-serif;
 }
+.listPage {
+  padding-top: 80px;
+}
 section {
   position: relative;
   overflow: hidden;
@@ -68,6 +71,7 @@ img {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 .recipe li {
   width: 250px;
