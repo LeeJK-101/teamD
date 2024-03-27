@@ -6,14 +6,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <link rel="icon" href="../img/icon_cook2.png" />
+    <link rel="icon" href="../img/icon_cook.png" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <!-- <link rel="stylesheet" href="../css/reset.css" /> -->
-    <link rel="stylesheet" href="../css/style.css" />
-    <script defer src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/login.css" />
+    <script defer src="../js/login.js"></script>
     <title>자취요리사</title>
   </head>
   <body>
@@ -32,20 +32,21 @@
           <div class="col-md-6 col-lg-4">
             <div class="login-wrap p-0">
               <input
-                id="tab-1"
+                id="tab1"
                 type="radio"
                 name="tab"
                 class="mb-4 text-center sign-in"
                 checked
               />
-              <label for="tab-1" class="tab">SIGN IN</label>
+              <label for="tab1" class="tab">SIGN IN</label>
               <input
-                id="signUp"
+                id="tab2"
                 type="radio"
+                name="tab"
                 class="mb-4 text-center sign-up"
               />
-              <label for="signUp" class="tab">SIGN UP</label>
-              <form action="#" class="signin-form">
+              <label for="tab2" class="tab">SIGN UP</label>
+              <form action="#" class="tab-content tb1div">
                 <div class="form-group">
                   <input
                     type="text"
@@ -77,28 +78,31 @@
                 </div>
                 <div class="form-group d-md-flex">
                   <div class="w-50">
-                    <label class="checkbox-wrap checkbox-primary" Remember Me />
-                    <input type="checkbox" checked />
-                    <span class="checkmark"></span>
+                    <label class="checkbox-wrap checkbox-primary"
+                      >Remember Me
+                      <input type="checkbox" checked />
+                      <span class="checkmark"></span>
+                    </label>
                   </div>
                   <div class="w-50 text-md-right">
-                    <a class="whiteColor" href="#">Forgot Password</a>
+                    <a class="attrColor" href="#">Forgot Password</a>
                   </div>
                 </div>
                 <p class="w-100 text-center">— Or Sign In With —</p>
                 <a href="#">
                   <img
                     class="icon_sns"
-                    src="../img/icon_naver.png"
+                    src="../img/login/icon_naver.png"
                     alt="naver logo"
                 /></a>
               </form>
-              <form action="#" class="signin-form">
+              <form action="#" class="tb2div tab-content">
                 <div class="form-group">
                   <input
                     type="text"
                     class="form-control block"
                     placeholder="Username"
+                    onclick="toggleDiv('tab2div', 'tab1div')"
                     required
                   />
                 </div>
@@ -135,14 +139,12 @@
                     id="username"
                     placeholder="Email"
                   />
-                  <span style="color: rgba(256, 256, 256, 0.7)" class="at-sign"
-                    >@</span
-                  >
+                  <span class="at-sign attrColor">@</span>
                   <div class="accordion">
                     <input
                       type="text"
                       id="domain"
-                      placeholder="Select your email domain"
+                      placeholder="Select your email"
                     />
                     <ul class="domain-list">
                       <li>@gmail.com</li>
