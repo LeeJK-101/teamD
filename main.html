@@ -6,6 +6,7 @@
     <title>자취요리사</title>
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
 
     <!-- Noto Sans kr -->
     <link
@@ -17,7 +18,7 @@
       src="https://kit.fontawesome.com/837ff3adc1.js"
       crossorigin="anonymous"
     ></script>
-
+    <script defer src="/js/header.js"></script>
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -27,17 +28,18 @@
   <body>
     <div class="wrap">
       <div class="inner">
-        <header>
+        <header class="headerA"></header>
+        <div class="search_box">
           <div class="logo">
             <a href="#"
               ><img src="/img/logo/logotype01_c2black.svg" alt=""
             /></a>
           </div>
-          <div class="header__search">
+          <div class="search_bar">
             <input type="text" />
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-        </header>
+        </div>
       </div>
       <div class="container">
         <div class="introduce">
@@ -53,7 +55,7 @@
           정말 <span>재밌겠죠?</span><br />
         </div>
 
-        <div class="todaypicks_box_title"><span> # 실시간 인기 </span></div>
+        <div class="todaypicks_box_title"><span> # 오늘의 추천 </span></div>
 
         <div class="todaypicks_box">
           <div class="today pick1"></div>
