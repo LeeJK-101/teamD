@@ -7,23 +7,24 @@ input:focus {
 .wrap {
   width: 1200px;
   margin: auto;
+  position: relative;
 }
 body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 헤더 부분 */
-header {
+.search_box {
   /* background-color: pink; */
   padding-bottom: 20px;
   /* border: 5px solid red; */
 }
 
-header .logo {
+.search_box .logo {
   text-align: center;
   padding: 50px 0 10px 0;
 }
-.header__search {
+.search_bar {
   position: relative;
   text-align: center;
   margin: 20px 0;
@@ -84,9 +85,22 @@ header .logo {
   font-weight: 100;
   line-height: 120%;
   color: #6e6e6e;
+  display: none;
 }
 .introduce span {
   font-weight: 400;
+}
+
+.todaypicks_box_title {
+  margin: auto;
+  width: 580px;
+}
+.todaypicks_box_title > span {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  padding: 0 15px;
 }
 
 .todaypicks_box {
@@ -115,6 +129,7 @@ header .logo {
   display: flex;
   gap: 20px;
   justify-content: center;
+  display: none;
 }
 
 .tip {
@@ -124,9 +139,21 @@ header .logo {
   border-radius: 12px;
 }
 
+.dishes_box_title {
+  margin: auto;
+  width: 580px;
+}
+.dishes_box_title > span {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  padding: 0 15px;
+}
+
 .dishes_box {
   padding: 50px 220px;
-  background-color: rgb(161, 172, 233);
+  /* background-color: rgb(161, 172, 233); */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -142,13 +169,7 @@ header .logo {
   background-position: center center;
   border-radius: 12px;
   display: relative;
-}
-
-.elements {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: #ffc540;
+  overflow: hidden;
 }
 
 .today .overlay {
@@ -160,4 +181,11 @@ header .logo {
   border-radius: 12px;
   padding: 20px;
   z-index: 1; /* 이 값을 추가하여 .overlay를 상위 레벨로 설정합니다. */
+}
+
+.elements {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ffc540;
 }
