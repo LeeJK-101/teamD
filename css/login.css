@@ -49,21 +49,14 @@ section {
   color: #fff;
   border-color: var(--main-color);
 }
-.tab {
-  font-size: 22px;
-  padding-bottom: 5px;
-  margin: 0 15px 10px 0;
-  display: inline-block;
-  border-bottom: 3px solid transparent;
-  text-transform: uppercase;
-}
+
 img {
   vertical-align: middle;
   border-style: none;
   page-break-inside: avoid;
 }
 .attrColor {
-  color: white;
+  color: var(--light-gray);
 }
 .attrColor:hover {
   color: var(--sub-color);
@@ -397,7 +390,6 @@ fieldset:disabled a.btn {
   display: block;
   position: relative;
   padding-left: 30px;
-  margin-bottom: 12px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
@@ -447,6 +439,7 @@ fieldset:disabled a.btn {
 }
 .w-100 {
   width: 100% !important;
+  color: var(--sub-color);
 }
 .d-flex {
   display: -webkit-box !important;
@@ -473,8 +466,8 @@ fieldset:disabled a.btn {
   }
 }
 /* 여기부터는 회원가입 폼 */
-.signin-form,
-.signup-form {
+.tb1div,
+.tb2div {
   top: 0;
   left: 0;
   right: 0;
@@ -487,6 +480,9 @@ fieldset:disabled a.btn {
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
+}
+form.tb1div {
+  transform: rotateY(0);
 }
 .sign-in,
 .sign-up {
@@ -503,6 +499,7 @@ fieldset:disabled a.btn {
   margin: 0 15px 10px 0;
   display: inline-block;
   border-bottom: 2px solid transparent;
+  color: var(--light-gray);
 }
 input,
 .btn {
@@ -518,14 +515,34 @@ input,
   background: rgba(255, 255, 255, 0.1);
 }
 .sign-in:checked + .tab + .sign-up + .tab + .signin-form {
+  border: 1px solid #000;
   transform: rotate(0);
+  z-index: 99;
 }
 .sign-up:checked + .tab + .signup-form {
   transform: rotate(0);
+  z-index: 99;
+
+  background: pink;
 }
-.signin-form .signup-form {
-  display: block;
+
+.signin-form {
+  position: relative;
 }
+.signup-form {
+  position: absolute;
+}
+
+.tb1div,
+.tb2div {
+  position: absolute;
+  top: 45px;
+}
+
+div.login-wrap form.tb2div {
+  visibility: hidden;
+}
+
 /* 이메일 토글 */
 .block {
   display: block;
@@ -556,4 +573,23 @@ li {
 }
 .domain-list li {
   cursor: pointer;
+}
+
+/* 
+  css 하나씩 주석 처리 해가면서 사용 안하는 css 지우기
+
+  다른 이벤트 거는 방법으로 수정
+  클래스 추가하도록 수정
+*/
+
+.show-form {
+  visibility: visible;
+  transform: rotateY('180deg');
+  z-index: 99;
+}
+
+.hidden-form {
+  visibility: none;
+  transform: rotateY('0');
+  z-index: 0;
 }
