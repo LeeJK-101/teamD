@@ -1,163 +1,925 @@
 const cooking = [
   {
     grade: 5,
-    name: '레시피1',
+    name: '당근치즈레시피',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈,당근',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자치즈레시피',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈,감자',
+    calories: '450',
+    view: '97',
+  },
+
+  {
+    grade: 5,
+    name: '두부당근레시피',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부,당근',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부감자레시피',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부,감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '당근치즈레시피',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근,치즈',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근감자레시피',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근,감자',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '계란치즈레시피',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '계란,달걀,에그,치즈',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '계란당근레시피',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '계란,달걀,에그,당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '계란레시피1',
     time: 10,
     image: '../img/sample01.png',
     description: '',
-    class: '계란,치즈',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '1200',
   },
   {
-    grade: 3,
-    name: '레시피2',
+    grade: 5,
+    name: '계란레시피2',
     time: 10,
     image: '../img/sample02.png',
     description: '',
-    class: '계란,두부',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '1250',
   },
   {
     grade: 5,
-    name: '레시피3',
+    name: '계란레시피3',
     time: 10,
     image: '../img/sample03.png',
     description: '',
-    class: '계란',
+    class: '계란,달걀,에그',
     calories: '550',
     view: '210',
   },
   {
     grade: 5,
-    name: '레시피4',
+    name: '계란레시피4',
     time: 20,
     image: '../img/sample04.png',
     description: '',
-    class: '두부',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '501',
   },
   {
     grade: 5,
-    name: '레시피5',
+    name: '계란레시피5',
     time: 10,
     image: '../img/sample05.png',
     description: '',
-    class: '계란',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '56',
   },
   {
     grade: 5,
-    name: '레시피6',
+    name: '계란레시피6',
     time: 10,
     image: '../img/sample06.png',
     description: '',
-    class: '치즈',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '82',
   },
   {
     grade: 5,
-    name: '레시피7',
+    name: '계란레시피7',
     time: 10,
     image: '../img/sample07.png',
     description: '',
-    class: '당근',
+    class: '계란,달걀,에그',
     calories: '550',
     view: '758',
   },
   {
     grade: 4,
-    name: '레시피8',
+    name: '계란레시피8',
     time: 20,
     image: '../img/sample08.png',
     description: '',
-    class: '계란',
+    class: '계란,달걀,에그',
     calories: '350',
     view: '5',
   },
   {
-    grade: 5,
-    name: '레시피9',
+    grade: 4,
+    name: '계란레시피9',
     time: 10,
     image: '../img/sample09.png',
     description: '',
-    class: '당근',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '97',
   },
   {
-    grade: 3,
-    name: '레시피10',
+    grade: 4,
+    name: '계란레시피10',
     time: 10,
     image: '../img/sample10.png',
     description: '',
-    class: '당근',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '124',
   },
   {
-    grade: 5,
-    name: '레시피11',
+    grade: 4,
+    name: '계란레시피11',
     time: 10,
     image: '../img/sample11.png',
     description: '',
-    class: '감자',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '8647',
   },
   {
-    grade: 2,
-    name: '레시피12',
+    grade: 3,
+    name: '계란레시피12',
     time: 20,
     image: '../img/sample12.png',
     description: '',
-    class: '계란',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '2676',
   },
   {
-    grade: 5,
-    name: '레시피13',
+    grade: 3,
+    name: '계란레시피13',
     time: 10,
     image: '../img/sample13.png',
     description: '',
-    class: '계란',
+    class: '계란,달걀,에그',
     calories: '450',
     view: '357',
   },
   {
-    grade: 4,
-    name: '레시피14',
+    grade: 3,
+    name: '계란레시피14',
     time: 10,
     image: '../img/sample14.png',
     description: '',
-    class: '계란',
+    class: '계란,달걀,에그',
     calories: '550',
     view: '284',
   },
   {
     grade: 3,
-    name: '레시피15',
+    name: '계란레시피15',
     time: 20,
     image: '../img/sample15.png',
     description: '',
-    class: '계란',
+    class: '계란,달걀,에그',
     calories: '350',
     view: '564',
   },
   {
-    grade: 5,
-    name: '레시피16',
+    grade: 1,
+    name: '계란레시피16',
     time: 10,
     image: '../img/sample16.png',
     description: '',
-    class: '계란',
+    class: '계란,달걀,에그',
     calories: '250',
     view: '15486',
+  },
+  {
+    grade: 1,
+    name: '계란레시피17',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '계란,달걀,에그',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 1,
+    name: '계란레시피18',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '계란,달걀,에그',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피2',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피3',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피4',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피5',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피6',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피7',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피8',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피9',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피10',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피11',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피12',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피13',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피14',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '당근레시피15',
+    time: 10,
+    image: '../img/sample16.png',
+    description: '',
+    class: '당근',
+    calories: '250',
+    view: '15486',
+  },
+  {
+    grade: 5,
+    name: '두부레시피',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피2',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+
+  {
+    grade: 5,
+    name: '두부레시피3',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피4',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피5',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피6',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피7',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피8',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피9',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피10',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피11',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피12',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피13',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피14',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피15',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피16',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피17',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '두부레시피18',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '두부',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피2',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피3',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피4',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피5',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피6',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피7',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피8',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피9',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피10',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피11',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피12',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피13',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피14',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피15',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '치즈레시피16',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '치즈',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피2',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피3',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피4',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피5',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피6',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피7',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피8',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피9',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피10',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피11',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피12',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피13',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피14',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피15',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피16',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
+  },
+  {
+    grade: 5,
+    name: '감자레시피17',
+    time: 10,
+    image: '../img/sample09.png',
+    description: '',
+    class: '감자',
+    calories: '450',
+    view: '97',
   },
 ];
 
@@ -201,9 +963,18 @@ function searchRecipe(keyword) {
   let normal = true;
   let filteredConvenience = false; //간편식 필터된 상태
   let filteredDiet = false; //다이어트식 필터된 상태
+  let none = false;
 
   if (keyword == '계란') {
     //입력한 키워드 값에 따라 필터된 cooking 배열을 display
+    displayList(filteredRecipe);
+    h2.innerHTML = '개의 레시피가 검색되었습니다';
+    h2.prepend(filteredRecipe.length);
+  } else if (keyword == '에그') {
+    displayList(filteredRecipe);
+    h2.innerHTML = '개의 레시피가 검색되었습니다';
+    h2.prepend(filteredRecipe.length);
+  } else if (keyword == '달걀') {
     displayList(filteredRecipe);
     h2.innerHTML = '개의 레시피가 검색되었습니다';
     h2.prepend(filteredRecipe.length);
@@ -226,18 +997,19 @@ function searchRecipe(keyword) {
   } else {
     recipe.innerHTML =
       '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
-
-    // 해당하는 키워드가 없을 시 레시피가 없음을 알림
+    none = true;
   }
 
   // --------------------필터탭----------------------------------------------
 
   convenienceBtn.addEventListener('click', () => {
+    none = false;
     if (simple == '') {
       recipe.innerHTML =
         '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
       h2.innerHTML = '개의 레시피가 검색되었습니다';
       h2.prepend(simple.length);
+      none = true;
       normal = false;
       filteredDiet = true;
       filteredConvenience = false;
@@ -249,11 +1021,13 @@ function searchRecipe(keyword) {
       filteredConvenience = true;
       filteredDiet = false;
     }
+
     convenienceBtn.style.color = 'rgba(119, 219, 101, 0.716)';
     dietFoodBtn.style.color = 'black';
   });
 
   dietFoodBtn.addEventListener('click', () => {
+    none = false;
     if (dietFood == '') {
       recipe.innerHTML =
         '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
@@ -262,6 +1036,7 @@ function searchRecipe(keyword) {
       filteredDiet = true;
       filteredConvenience = false;
       normal = false;
+      none = true;
     } else {
       displayList(dietFood);
       h2.innerHTML = '개의 레시피가 검색되었습니다';
@@ -270,8 +1045,9 @@ function searchRecipe(keyword) {
       filteredDiet = true;
       filteredConvenience = false;
     }
-    dietFoodBtn.style.color = 'rgba(119, 219, 101, 0.716)';
+
     convenienceBtn.style.color = 'black';
+    dietFoodBtn.style.color = 'rgba(119, 219, 101, 0.716)';
   });
   // --------------------배열 순서--------------------------------------
 
@@ -288,10 +1064,22 @@ function searchRecipe(keyword) {
     });
     if (filteredConvenience) {
       displayList(gradeArrConv);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (filteredDiet) {
       displayList(gradeArrDiet);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (normal) {
       displayList(gradeArr);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     }
     gradeBtn.style.fontWeight = 'bold';
     timeBtn.style.fontWeight = 'normal';
@@ -310,10 +1098,22 @@ function searchRecipe(keyword) {
     });
     if (filteredConvenience) {
       displayList(timeArrConv); //필터된 배열 디스플레이
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (filteredDiet) {
       displayList(timeArrDiet); // 필터 전 배열 디스플레이
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (normal) {
       displayList(timeArr);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     }
     timeBtn.style.fontWeight = 'bold';
     gradeBtn.style.fontWeight = 'normal';
@@ -332,10 +1132,22 @@ function searchRecipe(keyword) {
     });
     if (filteredConvenience) {
       displayList(viewArrConv);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (filteredDiet) {
       displayList(viewArrDiet);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     } else if (normal) {
       displayList(viewArr);
+      if (none) {
+        recipe.innerHTML =
+          '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+      }
     }
     timeBtn.style.fontWeight = 'normal';
     gradeBtn.style.fontWeight = 'normal';
@@ -349,9 +1161,16 @@ searchBtn.addEventListener('click', () => {
   if (keyword == '') {
     recipe.innerHTML =
       '<p style="height:500px;line-height:500px; ">해당하는 레시피가 없습니다.</p>';
+    none = true;
   } else {
     searchRecipe(keyword);
   }
+  dietFoodBtn.style.color = 'black';
+  convenienceBtn.style.color = 'black';
+  depth.insertBefore(gradeBtn, depth.firstChild);
+  gradeBtn.style.fontWeight = 'bold';
+  timeBtn.style.fontWeight = 'normal';
+  viewBtn.style.fontWeight = 'normal';
 });
 
 searchRecipe(productId);
