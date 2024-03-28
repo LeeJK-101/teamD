@@ -55,7 +55,7 @@ document.querySelector('.shareicon').addEventListener('click', () => {
   };
 
   if (navigator.share) {
-    // Navigator를 지원하는 경우만 실행
+    // Navigator를 지원하는 경우만 실행하기
     navigator
       .share(shareObject)
       .then(() => {
