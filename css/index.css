@@ -8,10 +8,35 @@ input:focus {
   margin: auto;
   position: relative;
   padding-top: 80px;
-  min-width: 440px; 
+  min-width: 440px;
 }
 body {
   font-family: 'Noto Sans KR', sans-serif;
+}
+.float_elements_box {
+  background-color: #f4f4f4;
+  height: 150px;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.float_elements {
+  left: -20%; /* 시작 위치 설정 */
+  display: flex;
+  flex-direction: row; /* 가로로 배열 */
+  align-items: center;
+}
+
+.float_elements a {
+  text-decoration: none;
+}
+
+.float_elements img {
+  width: 100px;
+  height: auto;
+  margin-right: 20px; /* 이미지 사이 간격 */
 }
 
 /* 검색 부분 */
@@ -61,24 +86,21 @@ body {
   /* border: 1px solid red; */
 }
 
-
-
 /* 소개*/
 .introduce {
   background-color: greenyellow;
   width: 580px;
-margin:20px auto;
-padding: 30px;
+  margin: 20px auto;
+  padding: 30px;
   padding-bottom: 50px;
   font-size: 30px;
   font-weight: 100;
   line-height: 120%;
   color: #6e6e6e;
 }
-.introduce-container{
+.introduce-container {
   background-color: greenyellow;
-width: 100%;
-
+  width: 100%;
 }
 .introduce span {
   font-weight: 400;
@@ -110,7 +132,6 @@ width: 100%;
   box-shadow: 4px 4px 4px lightgray;
 }
 .today {
-
   width: 100%;
   height: 350px;
   border-radius: 12px;
@@ -171,18 +192,17 @@ width: 100%;
   background-color: #ffc540;
 }
 
-
-@media (max-width: 800px ) {
+@media (max-width: 800px) {
   .search_bar {
     position: relative;
     text-align: center;
     margin: 20px 0;
   }
-  
+
   .search_bar input {
     width: 100%;
     height: 56px;
-    
+
     font-size: 24px;
     color: rgb(74, 74, 74);
     box-sizing: border-box;
@@ -192,9 +212,9 @@ width: 100%;
   }
   .introduce {
     background-color: greenyellow;
-  
-  margin:20px auto;
-  padding: 30px;
+
+    margin: 20px auto;
+    padding: 30px;
     padding-bottom: 50px;
     font-size: 20px;
     font-weight: 100;
@@ -204,38 +224,32 @@ width: 100%;
   .introduce span {
     font-weight: 400;
   }
-    
-  
-.todaypicks_box {
-  padding: 0 20px;
 
-  width: 100%;
-  margin: 20px auto;
-  height: 350px;
-  /* background-color: gold; */
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: none;
+  .todaypicks_box {
+    padding: 0 20px;
 
+    width: 100%;
+    margin: 20px auto;
+    height: 350px;
+    /* background-color: gold; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: none;
+  }
 
-}
-
-.today {
-
-  width: 100%;
-  height: 350px;
-  border-radius: 12px;
-  position: relative; /* 추가 */
-
-}
-
+  .today {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    position: relative; /* 추가 */
+  }
 
   .dishes_box {
     width: 100%;
-  
+
     margin: 20px auto;
     /* background-color: rgb(161, 172, 233); */
     display: flex;
@@ -243,11 +257,8 @@ width: 100%;
     gap: 20px;
     justify-content: center;
   }
-  }
-  
-  
+}
 
-  
-  .area {
-    height:200px
-  }
+.area {
+  height: 150px;
+}

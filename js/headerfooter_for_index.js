@@ -1,4 +1,3 @@
-
 const head = document.querySelector('header');
 head.innerHTML = `  
 <!-- nav -->
@@ -13,7 +12,7 @@ head.innerHTML = `
       
       <li><a href="#">전체 카테고리</a></li>
       <li><a href="#">마이 페이지</a></li>
-      <li><a href="login.html">로그인/회원가입</a></li>
+      <li><a href="/html/login.html">로그인/회원가입</a></li>
 
     </ul>
   </nav>
@@ -43,43 +42,40 @@ head.innerHTML = `
     <ul class="mobileNav">
       <li><a href="#">전체 카테고리</a></li>
       <li><a href="#">마이 페이지</a></li>
-      <li><a href="login.html">로그인/회원가입</a></li>
+      <li><a href="/html/login.html">로그인/회원가입</a></li>
     </ul>
   </nav>
   <div class="modalBack"></div>
 </article>
         `;
 
+const searchIcon = document.querySelector('#searchIcon'),
+  burger = document.querySelector('#burger'),
+  hiddenBtn = document.querySelector('.hidden'),
+  nav = document.querySelector('.nomalNav'),
+  modal = document.querySelector('.modal'),
+  modalBack = document.querySelector('.modalBack'),
+  searchBox = document.querySelector('.search-box'),
+  navCloseBtn = document.querySelector('.navCloseBtn');
 
-        const searchIcon = document.querySelector('#searchIcon'),
-        burger = document.querySelector('#burger'),
-        hiddenBtn = document.querySelector('.hidden'),
-        nav = document.querySelector('.nomalNav'),
-        modal = document.querySelector('.modal'),
-        modalBack = document.querySelector('.modalBack'),
-        searchBox = document.querySelector('.search-box'),
-        navCloseBtn = document.querySelector('.navCloseBtn');
-      
-      searchIcon.addEventListener('click', () => {
-        nav.classList.toggle('hidden');
-        searchBox.classList.toggle('hidden');
-      });
-      burger.addEventListener('click', () => {
-        modal.classList.toggle('hidden');
-      });
-      modalBack.addEventListener('click', () => {
-        modal.classList.toggle('hidden');
-      });
-      
-      const searchBtn2 = document.querySelector('#search-btn');
-      
-      searchBtn2.addEventListener('click', () => {
-        const keyword = document.querySelector('input').value;
-        // -------나중에 search입력값을 쿼리스트링으로 보내 이동 @@지우지 마세요@@
-        window.location.href = `html/search.html?keyword=${keyword}`;
-      });
-      
+searchIcon.addEventListener('click', () => {
+  nav.classList.toggle('hidden');
+  searchBox.classList.toggle('hidden');
+});
+burger.addEventListener('click', () => {
+  modal.classList.toggle('hidden');
+});
+modalBack.addEventListener('click', () => {
+  modal.classList.toggle('hidden');
+});
 
+const searchBtn2 = document.querySelector('#search-btn');
+
+searchBtn2.addEventListener('click', () => {
+  const keyword = document.querySelector('input').value;
+  // -------나중에 search입력값을 쿼리스트링으로 보내 이동 @@지우지 마세요@@
+  window.location.href = `html/search.html?keyword=${keyword}`;
+});
 
 const foot = document.querySelector('footer');
 
@@ -189,4 +185,3 @@ foot.innerHTML = `  <div class="footer-container">
 </div>
 </div>
 </div>`;
-
