@@ -1,3 +1,115 @@
+const imageList = [
+  { src: 'img/mainimg/avocado.png', alt: '아보카도' },
+  { src: 'img/mainimg/bread.png', alt: '식빵' },
+  { src: 'img/mainimg/cabbage.png', alt: '양배추' },
+  { src: 'img/mainimg/carrot.png', alt: '당근' },
+  { src: 'img/mainimg/cucumber.png', alt: '오이' },
+  { src: 'img/mainimg/doobu.png', alt: '두부' },
+  { src: 'img/mainimg/egg.png', alt: '달걀' },
+  { src: 'img/mainimg/greenonion.png', alt: '대파' },
+  { src: 'img/mainimg/kimchi.png', alt: '김치' },
+  { src: 'img/mainimg/mu.png', alt: '무' },
+  { src: 'img/mainimg/onion.png', alt: '양파' },
+  { src: 'img/mainimg/potato.png', alt: '감자' },
+  { src: 'img/mainimg/slicepork.png', alt: '만능냉동삼겹' },
+  { src: 'img/mainimg/spam.png', alt: '스팸' },
+  { src: 'img/mainimg/tomato.png', alt: '토마토' },
+];
+
+const floatContainer = document.querySelector('.float_elements');
+
+imageList.forEach((image) => {
+  const link = document.createElement('a');
+  link.href = `html/search.html?keyword=${image.alt}`;
+  const img = document.createElement('img');
+  img.src = image.src;
+  img.alt = image.alt;
+  link.appendChild(img);
+  floatContainer.appendChild(link.cloneNode(true)); // 복사본을 추가
+});
+
+// Animation
+gsap.to('.float_elements', {
+  x: '200%',
+  duration: 60,
+  ease: 'none',
+  repeat: -1,
+});
+
+gsap.to('.float_elements img', {
+  rotation: 360,
+  duration: 20,
+  ease: 'none',
+  repeat: -1,
+});
+
+function createDuplicateFloatElements() {
+  const originalFloatElements = document.querySelector('.float_elements');
+  const duplicateFloatElements = originalFloatElements.cloneNode(true); // 깊은 복사를 통해 복제
+
+  // 원래 요소와 복제된 요소를 연속적으로 배치
+  originalFloatElements.insertAdjacentElement(
+    'beforebegin',
+    duplicateFloatElements
+  );
+
+  // 원래 요소의 오른쪽 끝에서 시작하여 무한 루프 애니메이션 적용
+  gsap.to('.float_elements', {
+    x: '200%', // 오른쪽으로 이동
+    duration: 60, // 2배 천천히
+    ease: 'none',
+    repeat: -1,
+  });
+
+  gsap.to('.float_elements img', {
+    rotation: 360, // 회전
+    duration: 20, // 2배 천천히
+    ease: 'none',
+    repeat: -1,
+  });
+}
+
+createDuplicateFloatElements();
+
+function createDuplicateFloatElements() {
+  const originalFloatElements = document.querySelector('.float_elements');
+  const duplicateFloatElements = originalFloatElements.cloneNode(true); // 깊은 복사를 통해 복제
+
+  // 원래 요소와 복제된 요소를 연속적으로 배치
+  originalFloatElements.insertAdjacentElement(
+    'beforebegin',
+    duplicateFloatElements
+  );
+
+  function animateFloatElements() {
+    gsap.to('.float_elements', {
+      x: '200%', // 오른쪽으로 이동
+      duration: 60, // 2배 천천히
+      ease: 'none',
+      onComplete: function () {
+        this.targets().forEach((target) => {
+          gsap.set(target, { x: '-100%' }); // 시작 위치로 되돌리기
+        });
+      },
+      repeat: -1,
+    });
+  }
+
+  function animateFloatImages() {
+    gsap.to('.float_elements img', {
+      rotation: 360, // 회전
+      duration: 20, // 2배 천천히
+      ease: 'none',
+      repeat: -1,
+    });
+  }
+
+  animateFloatElements();
+  animateFloatImages();
+}
+
+createDuplicateFloatElements();
+
 // JSON 데이터를 불러오는 함수
 function fetchRecipes() {
   return fetch('/js/recipe_data.json')
@@ -123,7 +235,7 @@ async function setRandomRecipeImages() {
 
 // 상세 페이지로 새 탭에서 열리도록 이동하는 함수
 function redirectToDetailPage(id) {
-  window.open(`/html/detail.html?id=${id}`, '_blank');
+  window.open(`/html/detailpage.html?id=${id}`, '_blank');
 }
 // 페이지 로드 시 랜덤한 레시피 이미지 설정
 document.addEventListener('DOMContentLoaded', () => {
@@ -152,6 +264,7 @@ function slide() {
 setInterval(slide, 2000);
 
 // 기존 6개의 .dishes에 레시피 이미지와 오버레이 설정하는 함수
+
 async function loadRecipes() {
   const recipes = await fetchRecipes();
   const selectedRecipes = [];
@@ -172,12 +285,10 @@ async function loadRecipes() {
 }
 
 function setDishBackground(dish, recipe) {
-  // 레시피 이미지 설정
   dish.style.backgroundImage = `url(${recipe.image})`;
   dish.style.backgroundSize = 'cover';
   dish.style.backgroundPosition = 'center';
 
-  // 이미지 로드 후 오버레이 추가
   const img = new Image();
   img.src = recipe.image;
   img.onload = () => {
@@ -186,33 +297,92 @@ function setDishBackground(dish, recipe) {
 }
 
 function addOverlay(dish, recipe) {
-  // 오버레이 요소 생성 및 설정
   const overlay = document.createElement('div');
   overlay.className = 'dishesOverlay';
   overlay.innerHTML = `
-    <span class="name">${recipe.name}</span>
-    <span class="time">
-      <i class="fas fa-clock" style="font-size: 12px; color: lightgrey;"></i> 약 ${recipe.prep_time}분 소요
-    </span>
+    <p class="name" style="font-size: 25px; font-weight:300;  line-height: 30px;word-break : keep-all;word-wrap:break-word" >${recipe.name}</p>
+    <p class="time" style="font-size: 12px; color: lightgrey; margin-top:15px">
+      <i class="fas fa-clock" ></i> 약 ${recipe.prep_time}분 소요
+    </p>
   `;
+
   dish.appendChild(overlay);
 
-  // 오버레이 스타일 설정
-  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
   overlay.style.color = 'white';
-  overlay.style.fontSize = '14px';
   overlay.style.fontWeight = '500';
   overlay.style.textAlign = 'left';
-  overlay.style.position = 'absolute';
-  overlay.style.bottom = '0';
+  overlay.style.position = 'relative';
+  overlay.style.top = '0';
   overlay.style.left = '0';
-  overlay.style.right = '0';
-  overlay.style.padding = '10px';
+  overlay.style.padding = '14px';
   overlay.style.transition = 'opacity 0.3s ease';
+  overlay.style.opacity = '0';
+  overlay.style.boxSizing = 'border-box';
+
+  // 클릭 이벤트 추가
+  dish.addEventListener('click', () => {
+    redirectToDetailPage(recipe.id);
+  });
+}
+
+//새창 주소
+function redirectToDetailPage(id) {
+  window.open(`/html/detailpage.html?id=${id}`, '_blank');
+}
+
+// 마우스 호버 시 오버레이 표시 및 숨김
+document.addEventListener('DOMContentLoaded', () => {
+  loadRecipes();
+
+  const dishes = document.querySelectorAll('.dishes');
+  dishes.forEach((dish) => {
+    dish.addEventListener('mouseover', function () {
+      showDishOverlay(this);
+    });
+    dish.addEventListener('mouseout', function () {
+      hideDishOverlay(this);
+    });
+  });
+});
+
+function showDishOverlay(dish) {
+  const overlay = dish.querySelector('.dishesOverlay');
+  overlay.style.opacity = '1';
+}
+
+function hideDishOverlay(dish) {
+  const overlay = dish.querySelector('.dishesOverlay');
   overlay.style.opacity = '0';
 }
 
-// 페이지 로드 시 6개의 레시피 이미지 설정 및 오버레이 적용
-document.addEventListener('DOMContentLoaded', () => {
-  loadRecipes();
+const searchInput = document.getElementById('search-input');
+const searchIconIndex = document.getElementById('searchIconIndex');
+
+const showSearchResult = () => {
+  let searchWord = searchInput.value;
+  console.log('showSearchResult called with keyword:', searchWord);
+  window.location.href = `/html/search.html?keyword=${searchWord}`;
+  searchInput.value = ''; // 입력 필드의 값을 비워줍니다.
+};
+
+const enterKey = (event) => {
+  if (event.code === 'Enter') {
+    console.log('Enter key pressed');
+    showSearchResult();
+  }
+};
+
+searchInput.addEventListener('keypress', (event) => {
+  console.log('Keypress event triggered');
+  enterKey(event);
 });
+
+const searchByIconIndex = () => {
+  console.log('Search icon clicked');
+  showSearchResult();
+};
+
+searchIconIndex.addEventListener('click', searchByIconIndex);

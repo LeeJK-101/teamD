@@ -1,9 +1,15 @@
+
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 body {
   font-family: 'Noto Sans KR', sans-serif;
 }
+
+.listPage {
+  padding-top: 80px;
+}
+
 section {
   position: relative;
   overflow: hidden;
@@ -46,6 +52,7 @@ h2 {
   padding: 5px;
   border-radius: 5px;
   width: 150px;
+
   height: 40px;
   overflow: hidden;
 }
@@ -68,6 +75,7 @@ img {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
 }
 .recipe li {
   width: 250px;
@@ -86,6 +94,9 @@ img {
   align-items: center;
 }
 
+.area{
+  height: 20px;
+}
 @media screen and (max-width: 1000px) {
   .recipe {
     display: flex;
