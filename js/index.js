@@ -1,3 +1,115 @@
+const imageList = [
+  { src: 'img/mainimg/avocado.png', alt: '아보카도' },
+  { src: 'img/mainimg/bread.png', alt: '식빵' },
+  { src: 'img/mainimg/cabbage.png', alt: '양배추' },
+  { src: 'img/mainimg/carrot.png', alt: '당근' },
+  { src: 'img/mainimg/cucumber.png', alt: '오이' },
+  { src: 'img/mainimg/doobu.png', alt: '두부' },
+  { src: 'img/mainimg/egg.png', alt: '달걀' },
+  { src: 'img/mainimg/greenonion.png', alt: '대파' },
+  { src: 'img/mainimg/kimchi.png', alt: '김치' },
+  { src: 'img/mainimg/mu.png', alt: '무' },
+  { src: 'img/mainimg/onion.png', alt: '양파' },
+  { src: 'img/mainimg/potato.png', alt: '감자' },
+  { src: 'img/mainimg/slicepork.png', alt: '만능냉동삼겹' },
+  { src: 'img/mainimg/spam.png', alt: '스팸' },
+  { src: 'img/mainimg/tomato.png', alt: '토마토' },
+];
+
+const floatContainer = document.querySelector('.float_elements');
+
+imageList.forEach((image) => {
+  const link = document.createElement('a');
+  link.href = `html/search.html?keyword=${image.alt}`;
+  const img = document.createElement('img');
+  img.src = image.src;
+  img.alt = image.alt;
+  link.appendChild(img);
+  floatContainer.appendChild(link.cloneNode(true)); // 복사본을 추가
+});
+
+// Animation
+gsap.to('.float_elements', {
+  x: '200%',
+  duration: 60,
+  ease: 'none',
+  repeat: -1,
+});
+
+gsap.to('.float_elements img', {
+  rotation: 360,
+  duration: 20,
+  ease: 'none',
+  repeat: -1,
+});
+
+function createDuplicateFloatElements() {
+  const originalFloatElements = document.querySelector('.float_elements');
+  const duplicateFloatElements = originalFloatElements.cloneNode(true); // 깊은 복사를 통해 복제
+
+  // 원래 요소와 복제된 요소를 연속적으로 배치
+  originalFloatElements.insertAdjacentElement(
+    'beforebegin',
+    duplicateFloatElements
+  );
+
+  // 원래 요소의 오른쪽 끝에서 시작하여 무한 루프 애니메이션 적용
+  gsap.to('.float_elements', {
+    x: '200%', // 오른쪽으로 이동
+    duration: 60, // 2배 천천히
+    ease: 'none',
+    repeat: -1,
+  });
+
+  gsap.to('.float_elements img', {
+    rotation: 360, // 회전
+    duration: 20, // 2배 천천히
+    ease: 'none',
+    repeat: -1,
+  });
+}
+
+createDuplicateFloatElements();
+
+function createDuplicateFloatElements() {
+  const originalFloatElements = document.querySelector('.float_elements');
+  const duplicateFloatElements = originalFloatElements.cloneNode(true); // 깊은 복사를 통해 복제
+
+  // 원래 요소와 복제된 요소를 연속적으로 배치
+  originalFloatElements.insertAdjacentElement(
+    'beforebegin',
+    duplicateFloatElements
+  );
+
+  function animateFloatElements() {
+    gsap.to('.float_elements', {
+      x: '200%', // 오른쪽으로 이동
+      duration: 60, // 2배 천천히
+      ease: 'none',
+      onComplete: function () {
+        this.targets().forEach((target) => {
+          gsap.set(target, { x: '-100%' }); // 시작 위치로 되돌리기
+        });
+      },
+      repeat: -1,
+    });
+  }
+
+  function animateFloatImages() {
+    gsap.to('.float_elements img', {
+      rotation: 360, // 회전
+      duration: 20, // 2배 천천히
+      ease: 'none',
+      repeat: -1,
+    });
+  }
+
+  animateFloatElements();
+  animateFloatImages();
+}
+
+createDuplicateFloatElements();
+
 // JSON 데이터를 불러오는 함수
 function fetchRecipes() {
   return fetch('/js/recipe_data.json')
@@ -123,7 +235,7 @@ async function setRandomRecipeImages() {
 
 // 상세 페이지로 새 탭에서 열리도록 이동하는 함수
 function redirectToDetailPage(id) {
-  window.open(`/html/detail.html?id=${id}`, '_blank');
+  window.open(`/html/detailpage.html?id=${id}`, '_blank');
 }
 // 페이지 로드 시 랜덤한 레시피 이미지 설정
 document.addEventListener('DOMContentLoaded', () => {
@@ -218,7 +330,7 @@ function addOverlay(dish, recipe) {
 
 //새창 주소
 function redirectToDetailPage(id) {
-  window.open(`/html/detail.html?id=${id}`, '_blank');
+  window.open(`/html/detailpage.html?id=${id}`, '_blank');
 }
 
 // 마우스 호버 시 오버레이 표시 및 숨김
@@ -246,67 +358,31 @@ function hideDishOverlay(dish) {
   overlay.style.opacity = '0';
 }
 
-// 애니메이션
-gsap.from('.elements', {
-  y: 200,
-  duration: 10,
-  ease: 'none',
-  repeat: -1,
-  rotation: 360,
+const searchInput = document.getElementById('search-input');
+const searchIconIndex = document.getElementById('searchIconIndex');
+
+const showSearchResult = () => {
+  let searchWord = searchInput.value;
+  console.log('showSearchResult called with keyword:', searchWord);
+  window.location.href = `/html/search.html?keyword=${searchWord}`;
+  searchInput.value = ''; // 입력 필드의 값을 비워줍니다.
+};
+
+const enterKey = (event) => {
+  if (event.code === 'Enter') {
+    console.log('Enter key pressed');
+    showSearchResult();
+  }
+};
+
+searchInput.addEventListener('keypress', (event) => {
+  console.log('Keypress event triggered');
+  enterKey(event);
 });
 
-const imageList = [
-  { src: 'img/mainimg/avocado.png', alt: '아보카도' },
-  { src: 'img/mainimg/bread1.png', alt: '식빵' },
-  { src: 'img/mainimg/bread2.png', alt: '식빵' },
-  { src: 'img/mainimg/cabbage.png', alt: '양배추' },
-  { src: 'img/mainimg/carrot.png', alt: '당근' },
-  { src: 'img/mainimg/cucumber.png', alt: '오이' },
-  { src: 'img/mainimg/cucumber1.png', alt: '오이' },
-  { src: 'img/mainimg/doobu.png', alt: '두부' },
-  { src: 'img/mainimg/egg.png', alt: '달걀' },
-  { src: 'img/mainimg/greenonion.png', alt: '대파' },
-  { src: 'img/mainimg/kimchi.png', alt: '김치' },
-  { src: 'img/mainimg/mu.png', alt: '무' },
-  { src: 'img/mainimg/onion.png', alt: '양파' },
-  { src: 'img/mainimg/potato.png', alt: '감자' },
-  { src: 'img/mainimg/slicepork.png', alt: '만능냉동삼겹' },
-  { src: 'img/mainimg/spam2.png', alt: '스팸' },
-  { src: 'img/mainimg/tomato.png', alt: '토마토' },
-];
+const searchByIconIndex = () => {
+  console.log('Search icon clicked');
+  showSearchResult();
+};
 
-const els = ['.el1', '.el2', '.el3', '.el4'];
-
-els.forEach((el) => {
-  const randomImage = imageList[Math.floor(Math.random() * imageList.length)];
-
-  // 랜덤 이미지 및 alt 속성값 적용
-  document.querySelector(
-    el
-  ).innerHTML = `<a href="#"><img src="${randomImage.src}" alt="${randomImage.alt}" /></a>`;
-
-  gsap.set(el, {
-    x: () => Math.random() * (window.innerWidth - 50), // 랜덤한 x 위치
-    y: () => Math.random() * window.innerHeight, // 랜덤한 y 위치
-    transformOrigin: 'center center', // 이미지 중심을 회전 축으로 설정
-  });
-
-  // 이미지 사이즈 조절
-  const imgElement = document.querySelector(el + ' img');
-  imgElement.style.width = '400px';
-  imgElement.style.height = '400px';
-  imgElement.style.objectFit = 'cover';
-
-  // 클릭 이벤트 리스너 추가
-  document.querySelector(el).addEventListener('click', function () {
-    const keyword = document.querySelector(el + ' img').getAttribute('alt');
-    window.location.href = `search.html?class=${keyword}`;
-  });
-});
-
-const altValues = els.map((el) => {
-  const imgAlt = document.querySelector(el + ' img').getAttribute('alt');
-  return imgAlt;
-});
-
-console.log(altValues); // alt 속성값들을 배열로 출력
+searchIconIndex.addEventListener('click', searchByIconIndex);

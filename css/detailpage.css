@@ -1,3 +1,7 @@
+main{
+  padding-top: 90px;
+}
+
 .recipeimg img {
   width: 400px;
   height: 400px;
@@ -12,6 +16,8 @@
 .main_content h3 {
   color: rgb(12, 12, 12);
 }
+
+
 .main-icons img {
   margin: 0px 300px 0px 0px;
 
@@ -40,7 +46,6 @@
   width: 32px;
   height: 32px;
   position: relative;
-  padding-top: 30px;
   margin-right: 60px;
   margin-left: 60px;
 
