@@ -8,6 +8,7 @@
 /* footer */
 .footer-container{
   padding: 40px 0 0 70px;
+  
 }
 
 footer {
@@ -16,12 +17,13 @@ footer {
   background: #24262b;
 }
 
+
 .footer-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 0px 30px 70px;
+  padding: 0 0 30px 70px;
 }
 
 /* footer-information */
@@ -164,5 +166,11 @@ footer {
   }
   .footer-bottom {
     margin-top: -20px;
+    
   }
+}
+
+
+.micrologo {
+ width: 16px; 
 }

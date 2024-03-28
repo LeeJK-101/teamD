@@ -18,6 +18,7 @@ header {
   height: 80px;
   background: #043300;
   border-bottom: 5px solid #14ff00;
+  z-index: 9999;
  }
 
 /* 헤더 내부의 1200px 너비 최대값의 section  */

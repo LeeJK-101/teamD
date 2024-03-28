@@ -94,6 +94,9 @@ img {
   align-items: center;
 }
 
+.area{
+  height: 20px;
+}
 @media screen and (max-width: 1000px) {
   .recipe {
     display: flex;

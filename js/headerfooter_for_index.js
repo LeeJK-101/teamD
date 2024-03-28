@@ -76,7 +76,7 @@ head.innerHTML = `
       searchBtn2.addEventListener('click', () => {
         const keyword = document.querySelector('input').value;
         // -------나중에 search입력값을 쿼리스트링으로 보내 이동 @@지우지 마세요@@
-        window.location.href = `search.html?keyword=${keyword}`;
+        window.location.href = `html/search.html?keyword=${keyword}`;
       });
       
 
@@ -84,7 +84,7 @@ head.innerHTML = `
 const foot = document.querySelector('footer');
 
 foot.innerHTML = `  <div class="footer-container">
-<div class="footer-logo"><a href="../index.html"><img src="../img/logo/logotype03_c1green.svg" alt="logo" height="26px" /></a></div>
+<div class="footer-logo"><a href="../index.html"><img src="../img/logo/logotype03_c1green.svg" alt="logo" height="26px" text-align="left"/></a></div>
 </div>
 <!-- footer top -->
 <div class="footer-row">
@@ -98,7 +98,7 @@ foot.innerHTML = `  <div class="footer-container">
     <ul>
       <li>
         <a class="about" href="#"
-          ><img src="../img/logo/logotype04_c1green.svg" alt="logo" width="16px" class="micrologo" /> team D 자취요리사</a
+        ><img src="../img/logo/logotype04_c1green.svg" alt="logo" width="16px" class="micrologo" /> team D 자취요리사</a
         >
       </li>
       <li>
