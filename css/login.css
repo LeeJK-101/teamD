@@ -589,18 +589,6 @@ li {
   클래스 추가하도록 수정
 */
 
-.show-form {
-  visibility: visible;
-  transform: rotateY('180deg');
-  z-index: 99;
-}
-
-.hidden-form {
-  visibility: none;
-  transform: rotateY('0');
-  z-index: 0;
-}
-
 footer {
   display: none !important;
 }
