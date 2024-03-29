@@ -16,7 +16,9 @@
 })();
 
 // login page form 회전
+const tab1div = document.querySelector('#tab1');
 const innerForm1 = document.querySelector('.tb1div');
+const tab2div = document.querySelector('#tab2');
 const innerForm2 = document.querySelector('.tb2div');
 
 tab1div.addEventListener('click', (e) => {
@@ -30,6 +32,20 @@ tab1div.addEventListener('click', (e) => {
     innerForm1.style.zIndex = '0';
     innerForm2.style.transform = 'rotateY(0)';
     innerForm2.style.zIndex = '99';
+  }
+});
+tab2div.addEventListener('click', (e) => {
+  if (e.target.checked) {
+    innerForm2.style.visibility = 'visible';
+    innerForm2.style.transform = 'rotateY(0)';
+    innerForm2.style.zIndex = '99';
+    innerForm1.style.transform = 'rotateY(180deg)';
+    innerForm1.style.zIndex = '0';
+  } else {
+    innerForm1.style.transform = 'rotate(0)';
+    innerForm1.style.zIndex = '99';
+    innerForm2.style.transform = 'rotateY(180deg)';
+    innerForm2.style.zIndex = '0';
   }
 });
 
