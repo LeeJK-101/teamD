@@ -14,9 +14,28 @@
     <!-- css -->
     <link rel="stylesheet" href="../css/allCategories.css" />
 
+    <!-- Font-awesome Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Google Icon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <!-- header/footer css  -->
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <!-- header/footer javascript -->
+    <script defer src="../js/headerfooter.js"></script>
+
     <title>All Categories</title>
   </head>
   <body>
+    <header></header>
     <!-- main -->
     <main class="main">
       <!-- home -->
@@ -37,22 +56,28 @@
 
       <!-- news -->
       <section class="new section" id="new">
-        <h2 class="section__title">추천드린 오늘의 유리</h2>
+        <h2 class="section__title">오늘의 추천 요리</h2>
 
         <div class="new__container container grid">
           <div class="new__content grid">
-            <article class="new__card">
+            <article
+              class="new__card"
+              onclick="location.href='/html/detailPage.html?id=1004'"
+            >
               <div class="new__data">
-                <h2 class="new__title">에그치즈토스트</h2>
+                <h2 class="new__title">프렌치토스트</h2>
                 <p class="new__description">
-                  백파더 백종원 에그치즈토스트 ~ 간단한데 맛은 최고!
+                  백파더 백종원 프렌치토스트 ~ 간단한데 맛은 최고!
                 </p>
               </div>
 
-              <img src="../img/1002.jpg" alt="image" class="new__img" />
+              <img src="../img/1004.jpg" alt="image" class="new__img" />
             </article>
 
-            <article class="new__card">
+            <article
+              class="new__card"
+              onclick="location.href='/html/detailPage.html?id=1001'"
+            >
               <div class="new__data">
                 <h2 class="new__title">당근라페</h2>
                 <p class="new__description">
@@ -60,16 +85,19 @@
                 </p>
               </div>
 
-              <img src="../img/1003.jpg" alt="image" class="new__img" />
+              <img src="../img/1001.jpg" alt="image" class="new__img" />
             </article>
 
-            <article class="new__card">
+            <article
+              class="new__card"
+              onclick="location.href='/html/detailPage.html?id=1016'"
+            >
               <div class="new__data">
-                <h2 class="new__title">간계밥</h2>
+                <h2 class="new__title">간장 계란밥</h2>
                 <p class="new__description">간단한 점심 도시락 맛이 최고!</p>
               </div>
 
-              <img src="../img/1004.jpg" alt="image" class="new__img" />
+              <img src="../img/1016.jpg" alt="image" class="new__img" />
             </article>
           </div>
         </div>
@@ -86,7 +114,7 @@
             <div class="favorite__data">
               <h2 class="favorite__title">토마토</h2>
               <span class="favorite__subtitle">관련 </span>
-              <h3 class="favorite__price">4개</h3>
+              <h3 class="favorite__price">21개</h3>
             </div>
 
             <button class="favorite__button button">
@@ -100,7 +128,7 @@
             <div class="favorite__data">
               <h2 class="favorite__title">계란</h2>
               <span class="favorite__subtitle">관련</span>
-              <h3 class="favorite__price">5개</h3>
+              <h3 class="favorite__price">21개</h3>
             </div>
 
             <button class="favorite__button button">
@@ -114,7 +142,7 @@
             <div class="favorite__data">
               <h2 class="favorite__title">당근</h2>
               <span class="favorite__subtitle">관련</span>
-              <h3 class="favorite__price">6개</h3>
+              <h3 class="favorite__price">27개</h3>
             </div>
 
             <button class="favorite__button button">
@@ -128,7 +156,7 @@
             <div class="favorite__data">
               <h2 class="favorite__title">치즈</h2>
               <span class="favorite__subtitle">관련</span>
-              <h3 class="favorite__price">7개</h3>
+              <h3 class="favorite__price">22개</h3>
             </div>
 
             <button class="favorite__button button">
@@ -142,7 +170,7 @@
             <div class="favorite__data">
               <h2 class="favorite__title">감자</h2>
               <span class="favorite__subtitle">관련</span>
-              <h3 class="favorite__price">5개</h3>
+              <h3 class="favorite__price">23개</h3>
             </div>
 
             <button class="favorite__button button">
@@ -156,7 +184,7 @@
             <div class="favorite__data">
               <h2 class="favorite__title">두부</h2>
               <span class="favorite__subtitle">관련</span>
-              <h3 class="favorite__price">7개</h3>
+              <h3 class="favorite__price">21개</h3>
             </div>
 
             <button class="favorite__button button">
@@ -166,5 +194,6 @@
         </div>
       </section>
     </main>
+    <footer></footer>
   </body>
 </html>

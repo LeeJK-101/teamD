@@ -94,6 +94,11 @@ img {
   height: auto;
 }
 
+main.main {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
 /* 다시 사용 CSS  */
 .container {
   max-width: 1200px;
@@ -133,9 +138,9 @@ img {
 .home__shadow {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  right: 20%;
+  width: 500px;
+  height: 500px;
   z-index: -1;
 }
 
@@ -289,10 +294,34 @@ img {
 }
 
 /* BREAKPOINTS */
+/* 중간 디바이스 */
+@media screen and (max-width: 1199px) {
+  .home__bg,
+  .home__shadow {
+    position: absolute;
+    top: 0;
+    right: 20%;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home__bg,
+  .home__shadow {
+    display: none;
+  }
+}
 /* 작은 디바이스 */
 @media screen and (max-width: 340px) {
   .container {
     margin-inline: 1rem;
+  }
+
+  .home__bg,
+  .home__shadow {
+    display: none;
   }
 
   .home__title {
