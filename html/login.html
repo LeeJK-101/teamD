@@ -6,25 +6,45 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <link rel="icon" href="../img/icon_cook.png" />
+    <link rel="icon" href="/img/icon_cook.png" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <!-- <link rel="stylesheet" href="../css/reset.css" /> -->
-    <link rel="stylesheet" href="../css/login.css" />
-    <script defer src="../js/login.js"></script>
+
+    <!-- Font-awesome Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Google Icon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <!-- header/footer css  -->
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <!-- header/footer javascript -->
+    <script defer src="/js/headerfooter.js"></script>
+
+    <link rel="stylesheet" href="/css/login.css" />
+    <script defer src="/js/login.js"></script>
     <title>자취요리사: 로그인</title>
   </head>
   <body>
+    <header></header>
     <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6 text-center mb-5">
-            <a href="../index.html"
+            <a href="/index.html"
               ><img
-                src="../img/logo/logotype01_c2black.svg"
+                src="/img/logo/logotype01_c2black.svg"
                 alt="자취요리사 로고"
+                class="login-logo"
             /></a>
           </div>
         </div>
@@ -57,6 +77,7 @@
                 </div>
                 <div class="form-group">
                   <input
+                    id="password-field"
                     type="password"
                     class="form-control"
                     placeholder="Password"
@@ -108,8 +129,9 @@
                 </div>
                 <div class="form-group">
                   <input
+                    id="password-field"
                     type="password"
-                    class="form-control block"
+                    class="form-control"
                     placeholder="Password"
                     required
                   />
@@ -121,8 +143,9 @@
                 </div>
                 <div class="form-group">
                   <input
+                    id="password-field"
                     type="password"
-                    class="form-control block"
+                    class="form-control"
                     placeholder="Repeat Password"
                     required
                   />
@@ -137,20 +160,20 @@
                     type="text"
                     class="form-control"
                     id="username"
-                    placeholder="Email"
+                    placeholder="Email ID"
                   />
                   <span class="at-sign attrColor">@</span>
                   <div class="accordion">
                     <input
                       type="text"
                       id="domain"
-                      placeholder="Select your email"
+                      placeholder="Select your domain"
                     />
                     <ul class="domain-list">
-                      <li>@gmail.com</li>
-                      <li>@naver.com</li>
-                      <li>@hanmail.com</li>
-                      <li>@icloud.com</li>
+                      <li class="absol">@gmail.com</li>
+                      <li class="absol">@naver.com</li>
+                      <li class="absol">@hanmail.com</li>
+                      <li class="absol">@icloud.com</li>
                     </ul>
                   </div>
                 </div>
@@ -168,5 +191,6 @@
         </div>
       </div>
     </section>
+    <footer></footer>
   </body>
 </html>
