@@ -363,25 +363,21 @@ const searchIconIndex = document.getElementById('searchIconIndex');
 
 const showSearchResult = () => {
   let searchWord = searchInput.value;
-  console.log('showSearchResult called with keyword:', searchWord);
   window.location.href = `/html/search.html?keyword=${searchWord}`;
   searchInput.value = ''; // 입력 필드의 값을 비워줍니다.
 };
 
 const enterKey = (event) => {
   if (event.code === 'Enter') {
-    console.log('Enter key pressed');
     showSearchResult();
   }
 };
 
 searchInput.addEventListener('keypress', (event) => {
-  console.log('Keypress event triggered');
   enterKey(event);
 });
 
 const searchByIconIndex = () => {
-  console.log('Search icon clicked');
   showSearchResult();
 };
 
