@@ -10,7 +10,7 @@ head.innerHTML = `
     <!-- nav-menu -->
     <ul class="nav-links">
       
-      <li><a href="#">전체 카테고리</a></li>
+      <li><a href="/html/allCategories.html">전체 카테고리</a></li>
       <li><a href="#">마이 페이지</a></li>
       <li><a href="/html/login.html">로그인/회원가입</a></li>
 
