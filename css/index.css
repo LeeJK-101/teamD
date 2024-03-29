@@ -1,0 +1,264 @@
+/* input focus 검은색 라인 지우기 */
+input:focus {
+  outline: RGB(0, 0, 0, 0);
+}
+
+/* 가로 사이즈 1200px */
+.wrap {
+  margin: auto;
+  position: relative;
+  padding-top: 80px;
+  min-width: 440px;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.float_elements_box {
+  background-color: #f4f4f4;
+  height: 150px;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.float_elements {
+  left: -20%; /* 시작 위치 설정 */
+  display: flex;
+  flex-direction: row; /* 가로로 배열 */
+  align-items: center;
+}
+
+.float_elements a {
+  text-decoration: none;
+}
+
+.float_elements img {
+  width: 100px;
+  height: auto;
+  margin-right: 20px; /* 이미지 사이 간격 */
+}
+
+/* 검색 부분 */
+.search_box {
+  /* background-color: pink; */
+  padding-bottom: 20px;
+  /* border: 5px solid red; */
+}
+
+.search_box .logo {
+  text-align: center;
+  padding: 50px 0 10px 0;
+}
+.search_bar {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search_bar input {
+  width: 760px;
+  height: 56px;
+  font-size: 24px;
+  color: rgb(74, 74, 74);
+  box-sizing: border-box;
+  padding: 0 0 0 30px;
+  background-color: fff;
+  border-radius: 50px;
+  border: 5px solid#85FF7B;
+}
+
+.search_bar input:hover {
+  box-shadow: 4px 4px 4px #b37bff;
+}
+
+.search_bar > input:focus {
+  border: 5px solid #14ff00;
+  /* focus썼을 때 outline-color로 써야 함. */
+  box-shadow: 4px 4px 4px #b37bff;
+}
+
+.fa-solid.fa-magnifying-glass {
+  font-size: 30px;
+  color: #6e6e6e;
+  position: absolute;
+  transform: translate(-200%, 40%);
+  /* border: 1px solid red; */
+}
+
+/* 소개*/
+.introduce {
+  background-color: greenyellow;
+  width: 580px;
+  margin: 20px auto;
+  padding: 30px;
+  padding-bottom: 50px;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 120%;
+  color: #6e6e6e;
+}
+.introduce-container {
+  background-color: greenyellow;
+  width: 100%;
+}
+.introduce span {
+  font-weight: 400;
+}
+
+.title {
+  margin: 80px auto 0;
+  width: 580px;
+}
+.title > span {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  padding: 0 15px;
+}
+
+.todaypicks_box {
+  width: 580px;
+  margin: 20px auto;
+  height: 350px;
+  /* background-color: gold; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 12px;
+
+  box-shadow: 4px 4px 4px lightgray;
+}
+.today {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  position: relative; /* 추가 */
+}
+
+.dishes_box_title {
+  padding-top: 25px;
+  margin: auto;
+  width: 580px;
+}
+.dishes_box_title > span {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  padding: 0 15px;
+}
+
+.dishes_box {
+  width: 580px;
+
+  margin: 20px auto;
+  /* background-color: rgb(161, 172, 233); */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dishes {
+  width: 180px;
+  height: 180px;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url(/img//logo/logotype04_c1green.svg);
+  background-position: center center;
+  border-radius: 12px;
+  display: relative;
+  overflow: hidden;
+}
+
+.today .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 1; /* 이 값을 추가하여 .overlay를 상위 레벨로 설정합니다. */
+}
+
+.elements {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ffc540;
+}
+
+@media (max-width: 800px) {
+  .search_bar {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .search_bar input {
+    width: 100%;
+    height: 56px;
+
+    font-size: 24px;
+    color: rgb(74, 74, 74);
+    box-sizing: border-box;
+    background-color: fff;
+    border-radius: 50px;
+    border: 5px solid#85FF7B;
+  }
+  .introduce {
+    background-color: greenyellow;
+
+    margin: 20px auto;
+    padding: 30px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 120%;
+    color: #6e6e6e;
+  }
+  .introduce span {
+    font-weight: 400;
+  }
+
+  .todaypicks_box {
+    padding: 0 20px;
+
+    width: 100%;
+    margin: 20px auto;
+    height: 350px;
+    /* background-color: gold; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: none;
+  }
+
+  .today {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    position: relative; /* 추가 */
+  }
+
+  .dishes_box {
+    width: 100%;
+
+    margin: 20px auto;
+    /* background-color: rgb(161, 172, 233); */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+.area {
+  height: 100px;
+}

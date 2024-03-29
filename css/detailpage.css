@@ -1,0 +1,123 @@
+main{
+  padding-top: 90px;
+}
+
+.recipeimg img {
+  width: 400px;
+  height: 400px;
+  max-width: 1240px;
+}
+.main_content {
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0px auto;
+}
+.main_content h3 {
+  color: rgb(12, 12, 12);
+}
+
+
+.main-icons img {
+  margin: 0px 300px 0px 0px;
+
+  padding: 0px;
+  border: 0px;
+  position: relative;
+  width: 48px;
+  height: 48px;
+
+  display: inline-block;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.recipedetail {
+  padding: 40px 15px 0px;
+  text-align: center;
+  vertical-align: baseline;
+  display: flex;
+  color: lightgreen;
+}
+.recipedetail img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  margin-right: 60px;
+  margin-left: 60px;
+
+  font-size: 16px;
+  align-items: center;
+}
+
+.main_content .ingredient-title {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  margin-top: 40px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid lightgreen;
+  text-align: start;
+  font-weight: bold;
+}
+
+.main_content .ingredients {
+  padding: 0 20px 18px;
+  vertical-align: top;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.ingredients ul li {
+  min-width: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ingredients li {
+  padding: 10px 6px;
+  padding-inline-start: 40px;
+  list-style: none;
+  margin: 0 18px;
+  font-size: 16px;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 60px;
+}
+.main_content .steps-title {
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  margin-top: 40px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid lightgreen;
+  text-align: start;
+  font-weight: bold;
+}
+.steps {
+  padding: 10px 6px 10px 40px;
+  width: 1240px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+.steps ol {
+  list-style: none;
+  counter-reset: item;
+}
+.steps ol li {
+  counter-increment: item;
+  margin-bottom: 20px;
+  padding: 10px 6px 10px 40px;
+}
+.steps ol li:before {
+  margin-right: 10px;
+  content: counter(item);
+  background: lightgreen;
+  border-radius: 100%;
+  color: white;
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+}

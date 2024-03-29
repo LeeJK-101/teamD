@@ -1,0 +1,19 @@
+:root {
+  --main-color: #85ff7b;
+  --sub-green: #14ff00;
+  --sub-color: #fff6de;
+  --black: #000;
+  --dark-gray: #6e6e6e;
+  --gray: #999;
+  --light-gray: #c4c4c4;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 720px;
+  --breakpoint-lg: 834px;
+  --breakpoint-xl: 1200px;
+  --main-font: 'Noto Sans kr';
+  --fontsize-lg: 20px;
+  --fontsize-search: 16px;
+  --fontsize-md: 14px;
+  --fontsize-sm: 12px;
+}

@@ -6,3 +6,4 @@
 
 # 만약 config.js 사용해 API 키나 github에 올리고 싶지 않은 값을 관리한다면
 config.js
+main_test.html
