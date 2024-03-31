@@ -63,7 +63,7 @@ h2 {
 .depth li:hover {
   background-color: rgb(219, 219, 219);
 }
-img {
+li>img {
   width: 100%;
   border-radius: 3%;
 }
