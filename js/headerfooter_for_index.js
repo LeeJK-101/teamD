@@ -76,7 +76,7 @@ const searchBtn2 = document.querySelector('#search-btn');
 searchBtn2.addEventListener('click', () => {
   const keyword = document.querySelector('input').value;
   // -------나중에 search입력값을 쿼리스트링으로 보내 이동 @@지우지 마세요@@
-  window.location.href = `html/search.html?keyword=${keyword}`;
+  window.location.href = `./html/search.html?keyword=${keyword}`;
 });
 
 const foot = document.querySelector('footer');
