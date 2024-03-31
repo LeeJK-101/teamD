@@ -6,7 +6,7 @@ head.innerHTML = `
   <a href="#"
       ><span class="material-symbols-outlined menu" id="burger"> menu </span></a
     >
-  <a href="../index.html" class="logo"><img src="../img/logo/logotype01_c2white.svg" alt="logo" id="header_logo"></a>
+  <a href="./index.html" class="logo"><img src="./img/logo/logotype01_c2white.svg" alt="logo" id="header_logo"></a>
   <nav class="nomalNav">
     <!-- nav-menu -->
     <ul class="nav-links">
@@ -76,7 +76,7 @@ const searchBtn2 = document.querySelector('#search-btn');
 searchBtn2.addEventListener('click', () => {
   const keyword = document.querySelector('input').value;
   // -------나중에 search입력값을 쿼리스트링으로 보내 이동 @@지우지 마세요@@
-  window.location.href = `html/search.html?keyword=${keyword}`;
+  window.location.href = `./html/search.html?keyword=${keyword}`;
 });
 
 const foot = document.querySelector('footer');
@@ -85,7 +85,7 @@ foot.innerHTML = `
 <div class="footer-wrap">
 
     <div class="footer-logo-container">
-<a href="../index.html"><img src="../img/logo/logotype03_c1green.svg" alt="logo"
+<a href="./index.html"><img src="./img/logo/logotype03_c1green.svg" alt="logo"
             class="footer-logo" /></a>
     </div>
     <!-- footer top -->
@@ -100,7 +100,7 @@ foot.innerHTML = `
         <div class="footer-content">
           <ul>
             <li>
-              <a class="about" href="#"><img src="../img/logo/logotype04_c1green.svg" alt="logo" width="16px"
+              <a class="about" href="#"><img src="./img/logo/logotype04_c1green.svg" alt="logo" width="16px"
                   class="micrologo" /> team D 자취요리사</a>
             </li>
             <li>
