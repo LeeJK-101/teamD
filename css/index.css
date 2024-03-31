@@ -8,11 +8,12 @@ input:focus {
   margin: auto;
   position: relative;
   padding-top: 80px;
-  min-width: 440px;
 }
+
 body {
   font-family: 'Noto Sans KR', sans-serif;
 }
+
 .float_elements_box {
   background-color: #f4f4f4;
   height: 150px;
@@ -22,10 +23,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .float_elements {
-  left: -20%; /* 시작 위치 설정 */
+  left: -20%;
+  /* 시작 위치 설정 */
   display: flex;
-  flex-direction: row; /* 가로로 배열 */
+  flex-direction: row;
+  /* 가로로 배열 */
   align-items: center;
 }
 
@@ -36,7 +40,8 @@ body {
 .float_elements img {
   width: 100px;
   height: auto;
-  margin-right: 20px; /* 이미지 사이 간격 */
+  margin-right: 20px;
+  /* 이미지 사이 간격 */
 }
 
 /* 검색 부분 */
@@ -46,10 +51,11 @@ body {
   /* border: 5px solid red; */
 }
 
-.search_box .logo {
+.search_box .index_logo_box {
   text-align: center;
   padding: 50px 0 10px 0;
 }
+
 .search_bar {
   position: relative;
   text-align: center;
@@ -97,11 +103,15 @@ body {
   font-weight: 100;
   line-height: 120%;
   color: #6e6e6e;
+  word-break: keep-all;
+  word-wrap: break-word;
 }
+
 .introduce-container {
   background-color: greenyellow;
   width: 100%;
 }
+
 .introduce span {
   font-weight: 400;
 }
@@ -110,6 +120,7 @@ body {
   margin: 80px auto 0;
   width: 580px;
 }
+
 .title > span {
   font-size: 20px;
   font-weight: 500;
@@ -131,11 +142,13 @@ body {
 
   box-shadow: 4px 4px 4px lightgray;
 }
+
 .today {
   width: 100%;
   height: 350px;
   border-radius: 12px;
-  position: relative; /* 추가 */
+  position: relative;
+  /* 추가 */
 }
 
 .dishes_box_title {
@@ -143,6 +156,7 @@ body {
   margin: auto;
   width: 580px;
 }
+
 .dishes_box_title > span {
   font-size: 20px;
   font-weight: 500;
@@ -167,7 +181,7 @@ body {
   height: 180px;
 
   background-color: rgba(0, 0, 0, 0.2);
-  background-image: url(/img//logo/logotype04_c1green.svg);
+  background-image: url(../img//logo/logotype04_c1green.svg);
   background-position: center center;
   border-radius: 12px;
   display: relative;
@@ -182,7 +196,8 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
   padding: 20px;
-  z-index: 1; /* 이 값을 추가하여 .overlay를 상위 레벨로 설정합니다. */
+  z-index: 1;
+  /* 이 값을 추가하여 .overlay를 상위 레벨로 설정합니다. */
 }
 
 .elements {
@@ -192,7 +207,12 @@ body {
   background-color: #ffc540;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 400px) {
+  .index_logo {
+    width: calc(100vw / 2);
+  }
+}
+@media (max-width: 700px) {
   .search_bar {
     position: relative;
     text-align: center;
@@ -210,10 +230,10 @@ body {
     border-radius: 50px;
     border: 5px solid#85FF7B;
   }
+
   .introduce {
     background-color: greenyellow;
-
-    margin: 20px auto;
+    width: auto;
     padding: 30px;
     padding-bottom: 50px;
     font-size: 20px;
@@ -221,6 +241,7 @@ body {
     line-height: 120%;
     color: #6e6e6e;
   }
+
   .introduce span {
     font-weight: 400;
   }
@@ -244,7 +265,8 @@ body {
     width: 100%;
     height: 350px;
     border-radius: 12px;
-    position: relative; /* 추가 */
+    position: relative;
+    /* 추가 */
   }
 
   .dishes_box {
@@ -261,4 +283,11 @@ body {
 
 .area {
   height: 100px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
 }
