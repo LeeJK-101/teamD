@@ -1,4 +1,3 @@
-
 /* input focus 검은색 라인 지우기 */
 input:focus {
   outline: RGB(0, 0, 0, 0);
@@ -9,7 +8,6 @@ input:focus {
   margin: auto;
   position: relative;
   padding-top: 80px;
-
 }
 
 body {
@@ -54,10 +52,8 @@ body {
 }
 
 .search_box .index_logo_box {
-text-align: center;  
-padding: 50px 0 10px 0;
-
-  
+  text-align: center;
+  padding: 50px 0 10px 0;
 }
 
 .search_bar {
@@ -82,7 +78,7 @@ padding: 50px 0 10px 0;
   box-shadow: 4px 4px 4px #b37bff;
 }
 
-.search_bar>input:focus {
+.search_bar > input:focus {
   border: 5px solid #14ff00;
   /* focus썼을 때 outline-color로 써야 함. */
   box-shadow: 4px 4px 4px #b37bff;
@@ -125,7 +121,7 @@ padding: 50px 0 10px 0;
   width: 580px;
 }
 
-.title>span {
+.title > span {
   font-size: 20px;
   font-weight: 500;
   background-color: black;
@@ -161,7 +157,7 @@ padding: 50px 0 10px 0;
   width: 580px;
 }
 
-.dishes_box_title>span {
+.dishes_box_title > span {
   font-size: 20px;
   font-weight: 500;
   background-color: black;
@@ -185,7 +181,7 @@ padding: 50px 0 10px 0;
   height: 180px;
 
   background-color: rgba(0, 0, 0, 0.2);
-  background-image: url(/img//logo/logotype04_c1green.svg);
+  background-image: url(../img//logo/logotype04_c1green.svg);
   background-position: center center;
   border-radius: 12px;
   display: relative;
@@ -212,8 +208,9 @@ padding: 50px 0 10px 0;
 }
 
 @media (max-width: 400px) {
-  .index_logo{
-    width: calc(100vw/2)};
+  .index_logo {
+    width: calc(100vw / 2);
+  }
 }
 @media (max-width: 700px) {
   .search_bar {
@@ -236,7 +233,7 @@ padding: 50px 0 10px 0;
 
   .introduce {
     background-color: greenyellow;
-width: auto;
+    width: auto;
     padding: 30px;
     padding-bottom: 50px;
     font-size: 20px;
@@ -282,13 +279,15 @@ width: auto;
     gap: 20px;
     justify-content: center;
   }
-
-
-  
 }
 
 .area {
   height: 100px;
 }
 
-*, *::before, *::after { margin: 0; box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}

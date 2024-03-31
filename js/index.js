@@ -112,7 +112,7 @@ createDuplicateFloatElements();
 
 // JSON 데이터를 불러오는 함수
 function fetchRecipes() {
-  return fetch('/js/recipe_data.json')
+  return fetch('./js/recipe_data.json')
     .then((response) => response.json())
     .then((data) => data);
 }
